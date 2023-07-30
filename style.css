@@ -1,0 +1,159 @@
+:root {
+  --green: #3aafa9;
+  --dark-gr: #2b7a78;
+  --dark: #17252a;
+  --light: #def2f1;
+  --lighter: #feffff;
+  --rose: #FFC0C7;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/***************** navigation bar ****/
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  height: 58px;
+}
+#logo {
+  height: 58px;
+  margin-right: 1vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#name {
+  color: var(--dark-gr);
+}
+#nav .lesson {
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+#nav .lesson p {
+  width: 100%;
+  text-align: center;
+}
+#nav .lesson:hover {
+  background-color: var(--dark-gr);
+  color: white;
+}
+.menu {
+  display: none;
+}
+#menu {
+  color: white;
+  width: 45vw;
+  display: none;
+  cursor: pointer;
+}
+
+/***************** body ***/
+#title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 120px;
+}
+#search-con {
+  margin: 50px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#search-con input {
+  font-size: 20px;
+  height: 45px;
+  width: 40%;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  border-radius: 15px 0 0 15px;
+}
+#search-con span {
+  background-color: var(--dark-gr);
+  height: 45px;
+  color: white;
+  padding: 10px;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+}
+#subtitle {
+  color: var(--dark);
+  text-align: center;
+  padding: 0 20% 0 20%;
+  font-weight: bold;
+}
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+.wrapper section div {
+  position: relative;
+  top: 19vh;
+}
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  
+
+}
+.wrapper section:nth-child(1) {
+  background-color: var(--green);
+}
+.wrapper section:nth-child(2) {
+  background-color: var(--dark-gr);
+}
+.wrapper section:nth-child(3) {
+  background-color: green;
+}
+.wrapper section:nth-child(4) {
+  background-color: yellow;
+}
+@media only screen and (max-width: 600px) {
+  #subtitle {
+    font-size: 15px;
+  }
+  #title {
+    height: 80px;
+  }
+}
+@media only screen and (max-width: 465px) {
+  .lesson p {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  #menu {
+    display: none;
+    position: fixed;
+    top: 30px;
+    right: 0;
+    width: 40vw;
+    background-color: white;
+    text-align: center;
+  }
+  #menu a {
+    text-decoration: none;
+    color: black;
+  }
+  #nav .lesson {
+    display: none;
+  }
+}
