@@ -9,3 +9,7 @@ function menu() {
     }
 }
 
+function startLearning() {
+    window.location.href = "learn";
+}
+
