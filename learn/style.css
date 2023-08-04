@@ -97,10 +97,8 @@
 
 #content {
   width: calc(100vw - 250px);
-  height: calc(100vw - 58px);
-  margin-top: 58px;
   margin-left: 250px;
-  padding: 15px 80px;
+  padding: 15px 80px 0 80px;
 }
 
 .tuto {
@@ -133,4 +131,13 @@
   background-color: white;
   color: #17252a;
   box-shadow: black 2px 5px 10px 2px;
+}
+
+.title {
+  background-color: #3aafa9;
+  color: white;
+}
+.title p {
+  text-align: center;
+  padding: 20px;
 }
