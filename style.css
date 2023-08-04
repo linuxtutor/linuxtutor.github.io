@@ -13,6 +13,9 @@
   font-family: sans-serif;
 }
 
+body {
+  background-color: var(--green);
+}
 /***************** navigation bar ****/
 #nav {
   position: fixed;
@@ -120,33 +123,12 @@
   background-color: var(--rose);
   color: var(--dark);
 }
-.wrapper {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-}
+
 .wrapper section div {
   position: relative;
   top: 19vh;
 }
-section {
-  height: 100vh;
-  scroll-snap-align: start;
-  
 
-}
-.wrapper section:nth-child(1) {
-  background-color: var(--green);
-}
-.wrapper section:nth-child(2) {
-  background-color: var(--dark-gr);
-}
-.wrapper section:nth-child(3) {
-  background-color: green;
-}
-.wrapper section:nth-child(4) {
-  background-color: yellow;
-}
 @media only screen and (max-width: 600px) {
   #subtitle {
     font-size: 15px;
