@@ -16,6 +16,7 @@
 /***************** navigation bar ****/
 #nav {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -97,6 +98,27 @@
   text-align: center;
   padding: 0 20% 0 20%;
   font-weight: bold;
+}
+.cta {
+  background-color: var(--dark);
+  color: var(--rose);
+  box-shadow: none;
+  font-size: 30px;
+  outline: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.cta:hover {
+  background-color: var(--rose);
+  color: var(--dark);
 }
 .wrapper {
   height: 100vh;
