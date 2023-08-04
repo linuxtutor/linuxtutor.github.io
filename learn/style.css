@@ -1,0 +1,136 @@
+:root {
+  --green: #3aafa9;
+  --dark-gr: #2b7a78;
+  --dark: #17252a;
+  --light: #def2f1;
+  --lighter: #feffff;
+  --rose: #FFC0C7;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/***************** navigation bar ****/
+#nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  height: 58px;
+}
+
+#logo {
+  height: 58px;
+  margin-right: 1vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#name {
+  color: var(--dark-gr);
+}
+
+#nav .lesson {
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#nav .lesson p {
+  width: 100%;
+  text-align: center;
+}
+
+#nav .lesson:hover {
+  background-color: var(--dark-gr);
+  color: white;
+}
+
+.menu {
+  display: none;
+}
+
+#menu {
+  color: white;
+  width: 45vw;
+  display: none;
+  cursor: pointer;
+}
+
+/*********** body **/
+#content_table {
+    overflow: scroll;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #E7E9EB;
+    height: calc(100vh - 58px);
+    width: 250px;
+}
+
+#content_table a {
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+    line-height: 200%;
+    padding: 0 7px 0 7px;
+    font-size: 15px;
+}
+#content_table a:hover {
+    background-color: #cccccc;
+}
+
+#content {
+  width: calc(100vw - 250px);
+  height: calc(100vw - 58px);
+  margin-top: 58px;
+  margin-left: 250px;
+  padding: 15px 80px;
+}
+
+.tuto {
+  display: none;
+}
+
+#btn {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btn button {
+  height: 50px;
+  width: 100px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-gr);
+  color: white;
+  border: none;
+  border-radius: 0;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#btn button:hover {
+  background-color: white;
+  color: #17252a;
+  box-shadow: black 2px 5px 10px 2px;
+}
