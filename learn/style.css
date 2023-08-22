@@ -232,4 +232,8 @@
     display: none;
   }
 
+  span img {
+    width: calc(100vw - 50px) !important;
+    height: auto !important;
+  }
 }
