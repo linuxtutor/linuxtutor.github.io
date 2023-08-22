@@ -16,6 +16,7 @@
 
 /***************** navigation bar ****/
 #nav {
+  width: 100vw;
   position: fixed;
   z-index: 1;
   top: 0;
