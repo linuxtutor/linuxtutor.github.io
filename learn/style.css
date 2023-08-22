@@ -1,234 +1,158 @@
 :root {
-  --green: #3aafa9;
-  --dark-gr: #2b7a78;
-  --dark: #17252a;
-  --light: #def2f1;
-  --lighter: #feffff;
-  --rose: #FFC0C7;
-
+    --green: #3aafa9;
+    --dark-gr: #2b7a78;
+    --dark: #17252a;
+    --light: #def2f1;
+    --lighter: #feffff;
+    --rose: #FFC0C7;
+    --grey: #E7E9EB;
 }
 
 * {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
+body {
+    padding: 20vh 0 0 0;
+}
 /***************** navigation bar ****/
 #nav {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
-  height: 58px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    height: 58px;
 }
 
 #logo {
-  height: 58px;
-  margin-right: 1vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+    height: 58px;
+    margin-right: 1vh;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 #name {
-  color: var(--dark-gr);
+    color: var(--dark-gr);
 }
 
 #nav .lesson {
-  text-decoration: none;
-  color: black;
-  height: 100%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #nav .lesson p {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 #nav .lesson:hover {
-  background-color: var(--dark-gr);
-  color: white;
+    background-color: var(--dark-gr);
+    color: white;
 }
 
 .menu {
-  display: none;
+    display: none;
 }
 
 #menu {
-  color: white;
-  width: 45vw;
-  display: none;
-  cursor: pointer;
-}
-
-/*********** body **/
-#content_table {
-  z-index: 1;
-    overflow: scroll;
-    position: fixed;
-    top: 58px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #E7E9EB;
-    height: calc(100vh - 58px);
-    width: 250px;
-}
-
-#content_table a {
-    font-size: 17px;
-    text-decoration: none;
-    color: black;
-    line-height: 200%;
-    padding: 0 7px 0 7px;
-    font-size: 15px;
-}
-#content_table a:hover {
-    background-color: #cccccc;
-}
-
-#content {
-  width: calc(100vw - 250px);
-  margin-left: 250px;
-  padding: 15px 80px 0 80px;
-}
-
-.tuto {
-  display: none;
-}
-
-#btn {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#btn button {
-  height: 58px;
-  width: 100px;
-  font-size: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--dark-gr);
-  color: white;
-  border: none;
-  border-radius: 0;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-#btn button:hover {
-  background-color: white;
-  color: #17252a;
-  box-shadow: black 2px 5px 10px 2px;
-}
-
-.title {
-  background-color: #3aafa9;
-  color: white;
-}
-.title p {
-  text-align: center;
-  padding: 20px;
-}
-
-@media only screen and (max-width: 860px) {
-  #content_table {
-    display: none;
-  }
-  #content {
-    width: 100vw;
-    margin-left: 0;
-    padding: 15px 40px 0 40px;
-  }
-  .list {
-    position: fixed;
-    z-index: 1;
-    top: 63px; /*nav height is 58px*/
-    left: 3px;
-    background-color: var(--dark-gr);
-    border-radius: 100%;
     color: white;
-    padding: 3px;
-  }
+    width: 45vw;
+    display: none;
+    cursor: pointer;
+}
+/******************* body ***************/
+#quiz {
+    padding: 20px;
+    font-size: 18px;
+    display: block;
+    width: 800px;
+    margin: 81px auto auto auto;
+    background-color: var(--grey);
+}
+
+#quiz div {
+    display: none;
+}
+#quiz span {
+    background-color: #A8C7FA;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0;
+    cursor: pointer;
 }
 #hr {
-  z-index: 1;
-  width: 100vw;
-  height: 2px;
-  position: fixed;
-  top: 58px;
-  color: black;
-  background-color: black;
+    z-index: 1;
+    width: 100vw;
+    height: 2px;
+    position: fixed;
+    top: 58px;
+    color: black;
+    background-color: black;
+}
+#quizShower {
+    position: fixed;
+    top: 77px;
+    width: 100vw;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    #quiz {
+        width: 100vw;
+    }
 }
 
 @media only screen and (max-width: 465px) {
-  #content_table {
-    top: 38px;
+    #quizShower {
+        top: 47px;
+    }
+    #nav {
+        height: 38px; 
+    }
+    #logo {
+        height: 38px;
+    }
+    #hr {
+        top: 38px;
+    }
+    #nav .lesson p {
+      display: none;
+    }
+    .menu {
+      display: block;
+    }
+    #menu {
+        z-index: 1;
+      display: none;
+      position: fixed;
+      top: 40px;
+      right: 0;
+      width: 40vw;
+      background-color: var(--light);
+      text-align: center;
+    }
+    #menu a {
+      text-decoration: none;
+      color: black;
+    }
+    #menu a:hover p {
+        background-color: var(--grey);
+    }
+    #nav .lesson {
+      display: none;
+    }
   }
-  #nav {
-    height: 38px; 
-}
-#logo {
-    height: 38px;
-}
-#hr {
-    top: 38px;
-}
-#btn button{height: 50px;}
-  .list {
-    top: 43px;
-  }
-}
-
-@media only screen and (max-width: 733px) {
-  #btn {
-    height: 58px;
-    width: 40px;
-  }
-  #btn .btn  {
-    display: none;
-  }
-  .title p span {
-    font-size: 18pt;
-  }
-  #nav .lesson p {
-    display: none;
-  }
-  
-  .menu {
-    display: block;
-  }
-  #menu {
-    z-index: 1;
-    display: none;
-    position: fixed;
-    top: 38px;
-    right: 0;
-    width: 40vw;
-    background-color: var(--light);
-    text-align: center;
-  }
-  #menu a {
-    text-decoration: none;
-    color: black;
-  }
-  #menu a:hover p {
-      background-color: var(--grey);
-  }
-  #nav .lesson {
-    display: none;
-  }
-}
