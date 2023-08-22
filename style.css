@@ -72,7 +72,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   height: 120px;
-}
+} 
 #search-con {
   margin: 50px 0 0 0;
   display: flex;
@@ -80,7 +80,7 @@ body {
   justify-content: center;
 }
 #search-con input {
-  font-size: 20px;
+  font-size: 17px;
   height: 45px;
   width: 40%;
   border: none;
@@ -138,26 +138,49 @@ body {
   }
 }
 @media only screen and (max-width: 465px) {
-  .lesson p {
+  #nav .lesson p {
     display: none;
   }
   .menu {
     display: block;
   }
+    #nav {
+      height: 38px;
+    }
+  
+    #logo {
+      height: 38px;
+    }
+  
+    #hr {
+      top: 38px;
+    }
   #menu {
+    z-index: 1;
     display: none;
     position: fixed;
-    top: 30px;
+    top: 38px;
     right: 0;
     width: 40vw;
-    background-color: white;
+    background-color: var(--light);
     text-align: center;
   }
   #menu a {
     text-decoration: none;
     color: black;
   }
+  #menu a:hover p {
+      background-color: var(--grey);
+  }
   #nav .lesson {
     display: none;
+  }
+  #search-con input {
+    width: 250px;
+    min-width: 150px;
+    font-size: 12px;
+  }
+  .cta {
+    font-size: 20px;
   }
 }
