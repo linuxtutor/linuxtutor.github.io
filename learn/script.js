@@ -55,3 +55,15 @@ function next() {
     display(tuto.slice(1));
     window.location.href = tuto;
 }
+
+var ct = 0;
+function content_table() {
+    if (ct == 0 ) {
+        document.getElementById("content_table").style.display="flex";
+        document.getElementById("content_table").style.paddingTop="40px";
+        ct = 1;
+    } else {
+        document.getElementById("content_table").style.display="none";
+        ct = 0;
+    }
+}

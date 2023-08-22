@@ -5,6 +5,7 @@
   --light: #def2f1;
   --lighter: #feffff;
   --rose: #FFC0C7;
+
 }
 
 * {
@@ -72,6 +73,7 @@
 
 /*********** body **/
 #content_table {
+  z-index: 1;
     overflow: scroll;
     position: fixed;
     top: 58px;
@@ -112,7 +114,7 @@
 }
 
 #btn button {
-  height: 50px;
+  height: 58px;
   width: 100px;
   font-size: 15px;
   display: flex;
@@ -140,4 +142,93 @@
 .title p {
   text-align: center;
   padding: 20px;
+}
+
+@media only screen and (max-width: 860px) {
+  #content_table {
+    display: none;
+  }
+  #content {
+    width: 100vw;
+    margin-left: 0;
+    padding: 15px 40px 0 40px;
+  }
+  .list {
+    position: fixed;
+    z-index: 1;
+    top: 63px; /*nav height is 58px*/
+    left: 3px;
+    background-color: var(--dark-gr);
+    border-radius: 100%;
+    color: white;
+    padding: 3px;
+  }
+}
+#hr {
+  z-index: 1;
+  width: 100vw;
+  height: 2px;
+  position: fixed;
+  top: 58px;
+  color: black;
+  background-color: black;
+}
+
+@media only screen and (max-width: 465px) {
+  #content_table {
+    top: 38px;
+  }
+  #nav {
+    height: 38px; 
+}
+#logo {
+    height: 38px;
+}
+#hr {
+    top: 38px;
+}
+#btn button{height: 50px;}
+  .list {
+    top: 43px;
+  }
+}
+
+@media only screen and (max-width: 733px) {
+  #btn {
+    height: 58px;
+    width: 40px;
+  }
+  #btn .btn  {
+    display: none;
+  }
+  .title p span {
+    font-size: 18pt;
+  }
+  #nav .lesson p {
+    display: none;
+  }
+  
+  .menu {
+    display: block;
+  }
+  #menu {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 38px;
+    right: 0;
+    width: 40vw;
+    background-color: var(--light);
+    text-align: center;
+  }
+  #menu a {
+    text-decoration: none;
+    color: black;
+  }
+  #menu a:hover p {
+      background-color: var(--grey);
+  }
+  #nav .lesson {
+    display: none;
+  }
 }
