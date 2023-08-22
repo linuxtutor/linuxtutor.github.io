@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>Linuxtutor | learn linux, the easy way</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <nav id="nav">
+        <div style="display: flex;flex-direction: row;align-items: center;">
+            <img id="logo" onclick="window.location.href='https://linuxtutor.github.io'" src="../asset/logo.png">
+
+        </div>
+        <a class="lesson" href="">
+            <p>Learn</p>
+        </a>
+        <a class="lesson" href="">
+            <p>Exercices</p>
+        </a>
+        <a class="lesson" href="">
+            <p>Quiz</p>
+        </a>
+        <a class="lesson" href="/contact">
+            <p>Contact us</p>
+        </a>
+        <span onclick="menu()" class="material-symbols-outlined menu">menu</span>
+    </nav>
+    <div id="hr"></div>
+    <!--menu-->
+    <div id="menu">
+        <a class="lesson" href="">
+            <p>tutorials</p>
+        </a>
+        <a class="lesson" href="">
+            <p>exercices</p>
+        </a>
+        <a class="lesson" href="">
+            <p>quiz</p>
+        </a>
+    </div>
+    <p id="quizShower">quiz <span id="quizN">1</span> of 20</p>
+    <div id="quiz">
+        <div id="1" style="display: block;">
+            What command is used to display the current working directory in the Linux terminal?<br><br>
+            <span class="a" onclick="quiz(this)">pwd</span>
+            <span class="0" onclick="quiz(this)">cd</span>
+            <span class="0" onclick="quiz(this)">mv</span>
+        </div>
+        <div id="2">
+            Which command is used to list the contents of a directory in the Linux terminal?<br><br>
+            <span class="0" onclick="quiz(this)">pwd</span>
+            <span class="a" onclick="quiz(this)">ls</span>
+            <span class="0" onclick="quiz(this)">top</span>
+        </div>
+        <div id="3">
+            What is the command to create a new directory?<br><br>
+            <span class="0" onclick="quiz(this)">passwd</span>
+            <span class="a" onclick="quiz(this)">mkdir</span>
+            <span class="0" onclick="quiz(this)">touch</span>
+        </div>
+        <div id="4">
+            How would you navigate to your home directory in the Linux terminal?<br><br>
+            <span class="a" onclick="quiz(this)">cd ~</span>
+            <span class="0" onclick="quiz(this)">cd .</span>
+            <span class="0" onclick="quiz(this)">cd ..</span>
+        </div>
+        <div id="5">
+            How would you copy a file named "users.txt" from directory "~/Downloads" to directory "~/Documents" ?<br><br>
+            <span class="0" onclick="quiz(this)">cp ~/Documents ~/Downloads</span>
+            <span class="0" onclick="quiz(this)">cp ~/Documents/users.txt ~/Downloads/users.txt</span>
+            <span class="a" onclick="quiz(this)">cp ~/Downloads/users.txt ~/Documents/</span>
+        </div>
+        <div id="6">
+            What is the command to create a file?<br><br>
+            <span class="a" onclick="quiz(this)">touch filename</span>
+            <span class="0" onclick="quiz(this)">mkfile filenmae</span>
+            <span class="0" onclick="quiz(this)">both commands are correct</span>
+        </div>
+        <div id="7">
+            What is the command to display information about system and hardware<br><br>
+            <span class="0" onclick="quiz(this)">uname -a</span>
+            <span class="0" onclick="quiz(this)">neofetch</span>
+            <span class="a" onclick="quiz(this)">both commands are correct</span>
+        </div>
+        <div id="8">
+            What is the command to clear the terminal?<br><br>
+            <span class="a" onclick="quiz(this)">clear</span>
+            <span class="0" onclick="quiz(this)">echo</span>
+            <span class="0" onclick="quiz(this)">ps</span>
+        </div>
+        <div id="9">
+            What is the command to print text to terminal?<br><br>
+            <span class="a" onclick="quiz(this)">echo "text"</span>
+            <span class="0" onclick="quiz(this)">ls "text"</span>
+            <span class="0" onclick="quiz(this)">"text" echo</span>
+        </div>
+        <div id="10">
+            How would you display all the files in the directory "~/files" that has the extension ".txt"<br><br>
+            <span class="0" onclick="quiz(this)">ls ~/files grep ".txt"</span>
+            <span class="a" onclick="quiz(this)">ls ~/files | grep ".txt"</span>
+            <span class="0" onclick="quiz(this)">ls ~/files | get ".txt"</span>
+        </div>
+        <div id="11">
+            How would you run multiple commands in one line?<br><br>
+            <span class="a" onclick="quiz(this)">command1;command2;command3</span>
+            <span class="0" onclick="quiz(this)">command1,command2,command3</span>
+            <span class="0" onclick="quiz(this)">command1.command2.command3</span>
+        </div>
+        <div id="12">
+            What is the command to rewrite the file file.txt <br><br>
+            <span class="0" onclick="quiz(this)">echo "new content" >> file.txt</span>
+            <span class="0" onclick="quiz(this)">echo "new content" < file.txt</span>
+            <span class="a" onclick="quiz(this)">echo "new content" > file.txt</span>
+        </div>
+        <div id="13">
+            What is the command to append content to the file file.txt <br><br>
+            <span class="a" onclick="quiz(this)">echo "new content" >> file.txt</span>
+            <span class="0" onclick="quiz(this)">echo "new content" < file.txt</span>
+            <span class="0" onclick="quiz(this)">echo "new content" > file.txt</span>
+        </div>
+        <div id="14">
+            What is the /bin directory made for?<br><br>
+            <span class="0" onclick="quiz(this)">it is where program store temporary files</span>
+            <span class="a" onclick="quiz(this)">it holds files called binaries and can be executed</span>
+            <span class="0" onclick="quiz(this)">it store setting and configurations for many program</span>
+        </div>
+        <div id="15">
+            What is the /etc directory made for?<br><br>
+            <span class="0" onclick="quiz(this)">it is where program store temporary files</span>
+            <span class="0" onclick="quiz(this)">it holds files called binaries and can be executed</span>
+            <span class="a" onclick="quiz(this)">it store setting and configurations for many program</span>
+        </div>
+        <div id="16">
+            File permission defines ...<br><br>
+            <span class="0" onclick="quiz(this)">the size of the file</span>
+            <span class="a" onclick="quiz(this)">who can read and/or write to the file, and is the file executable or not</span>
+            <span class="0" onclick="quiz(this)">where the file is stored</span>
+        </div>
+        <div id="17">
+            Which one is correct?<br><br>
+            <span class="0" onclick="quiz(this)">package manager manipulate files and directories</span>
+            <span class="0" onclick="quiz(this)">package manager edit file permission</span>
+            <span class="a" onclick="quiz(this)">package manager install software</span>
+        </div>
+        <div id="18">
+            User and group management is <br><br>
+            <span class="0" onclick="quiz(this)">a way to manage users password</span>
+            <span class="0" onclick="quiz(this)">a way to install, upgrade, remove packages and software</span>
+            <span class="a" onclick="quiz(this)">a way to organize and control who can access and use the computer system</span>
+        </div>
+        <div id="19">
+            A shell is a<br><br>
+            <span class="a" onclick="quiz(this)">program that provides a command line interface for interacting with the OS</span>
+            <span class="0" onclick="quiz(this)">graphical user interface for interacting with the OS</span>
+            <span class="0" onclick="quiz(this)">program made for visiting the web</span>
+        </div>
+        <div id="20">
+            conditional statement in bash scripting<br><br>
+            <span class="0" onclick="quiz(this)">manage users files, directory and password</span>
+            <span class="a" onclick="quiz(this)">execute different blocks of code based on certain conditions</span>
+            <span class="0" onclick="quiz(this)">execute a block of code many time as long as a condition is true</span>
+        </div>
+        
+    </div>
+  <script src="../script.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

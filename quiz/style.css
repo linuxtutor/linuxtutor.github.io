@@ -1,0 +1,158 @@
+:root {
+    --green: #3aafa9;
+    --dark-gr: #2b7a78;
+    --dark: #17252a;
+    --light: #def2f1;
+    --lighter: #feffff;
+    --rose: #FFC0C7;
+    --grey: #E7E9EB;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 20vh 0 0 0;
+}
+/***************** navigation bar ****/
+#nav {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    height: 58px;
+}
+
+#logo {
+    height: 58px;
+    margin-right: 1vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#name {
+    color: var(--dark-gr);
+}
+
+#nav .lesson {
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#nav .lesson p {
+    width: 100%;
+    text-align: center;
+}
+
+#nav .lesson:hover {
+    background-color: var(--dark-gr);
+    color: white;
+}
+
+.menu {
+    display: none;
+}
+
+#menu {
+    color: white;
+    width: 45vw;
+    display: none;
+    cursor: pointer;
+}
+/******************* body ***************/
+#quiz {
+    padding: 20px;
+    font-size: 18px;
+    display: block;
+    width: 800px;
+    margin: 81px auto auto auto;
+    background-color: var(--grey);
+}
+
+#quiz div {
+    display: none;
+}
+#quiz span {
+    background-color: #A8C7FA;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0;
+    cursor: pointer;
+}
+#hr {
+    z-index: 1;
+    width: 100vw;
+    height: 2px;
+    position: fixed;
+    top: 58px;
+    color: black;
+    background-color: black;
+}
+#quizShower {
+    position: fixed;
+    top: 77px;
+    width: 100vw;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    #quiz {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    #quizShower {
+        top: 47px;
+    }
+    #nav {
+        height: 38px; 
+    }
+    #logo {
+        height: 38px;
+    }
+    #hr {
+        top: 38px;
+    }
+    #nav .lesson p {
+      display: none;
+    }
+    .menu {
+      display: block;
+    }
+    #menu {
+        z-index: 1;
+      display: none;
+      position: fixed;
+      top: 40px;
+      right: 0;
+      width: 40vw;
+      background-color: var(--light);
+      text-align: center;
+    }
+    #menu a {
+      text-decoration: none;
+      color: black;
+    }
+    #menu a:hover p {
+        background-color: var(--grey);
+    }
+    #nav .lesson {
+      display: none;
+    }
+  }
