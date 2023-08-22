@@ -16,13 +16,21 @@
             <img id="logo" onclick="window.location.href='https://linuxtutor.github.io'" src="../asset/logo.png">
 
         </div>
-        <a class="lesson" href="/learn/">
+        <div id="btn">
+            <button onclick="previous()"><span class="material-symbols-outlined">
+                chevron_left
+                </span><span class="btn">previous</span></button>   
+            <button onclick="next()"><span class="btn">next</span><span class="material-symbols-outlined">
+                chevron_right
+                </span></button>
+        </div>
+        <a class="lesson" href="/learn">
             <p>Learn</p>
         </a>
-        <a class="lesson" href="/exercices/">
+        <a class="lesson" href="/exercices">
             <p>Exercices</p>
         </a>
-        <a class="lesson" href="/quiz/">
+        <a class="lesson" href="/quiz">
             <p>Quiz</p>
         </a>
         <a class="lesson" href="/contact">
@@ -33,144 +41,2283 @@
     <div id="hr"></div>
     <!--menu-->
     <div id="menu">
-        <a class="lesson" href="/learn/">
+        <a class="lesson" href="/learn">
             <p>Learn</p>
         </a>
-        <a class="lesson" href="/exercices/">
-            <p>Exercices</p>
+        <a class="lesson" href="/exercices">
+            <p>Exercices</p> 
         </a>
-        <a class="lesson" href="/quiz/">
+        <a class="lesson" href="/quiz">
             <p>Quiz</p>
         </a>
         <a class="lesson" href="/contact">
             <p>Contact us</p>
         </a>
     </div>
-    <p id="quizShower">quiz <span id="quizN">1</span> of 20</p>
-    <div id="quiz">
-        <div id="1" style="display: block;">
-            What command is used to display the current working directory in the Linux terminal?<br><br>
-            <span class="a" onclick="quiz(this)">pwd</span>
-            <span class="0" onclick="quiz(this)">cd</span>
-            <span class="0" onclick="quiz(this)">mv</span>
+    <article id="content_table">
+        <a onclick="display('introduction', 0)" href="#introduction"><b>introduction</b></a>
+        <a onclick="display('introduction_to_linux', 1)" href="#introduction_to_linux"><b>introduction to linux</b></a>
+        <ul>  
+            <li><a onclick="display('introduction_to_linux', 2)" href="#what_is_linux">what is Linux ?</a></li>
+            <li><a onclick="display('introduction_to_linux', 3)" href="#advantages_of_using_linux">Advantages of using Linux</a></li>
+            <li><a onclick="display('introduction_to_linux', 4)" href="#disadvantages_of_using_linux">Disadvantages of using Linux</a></li>
+            <li><a onclick="display('introduction_to_linux', 5)" href="#who_uses_linux_and_where">Who uses Linux and where</a></li>
+        </ul>
+        <a onclick="display('linux_installation', 6)" href="#linux_installation"><b>linux installation</b></a>
+        <ul>
+            <li><a onclick="display('linux_installation', 7)" href="#what_is_virtualbox">what is virtualbox</a></li>
+            <li><a onclick="display('linux_installation', 8)" href="#install_virtualbox_in_windows">install virtualbox in Windows</a></li>
+            <li><a onclick="display('linux_installation', 9)" href="#install_virtualbox_in_macos">install virtualbox in MacOS</a></li>
+            <li><a onclick="display('linux_installation', 10)" href="#install_ubuntu_in_virtualbox">install ubuntu in virtualbox</a></li>
+            <li><a onclick="display('linux_installation', 11)" href="#install_ubuntu_on_a_computer">install ubuntu on a computer</a></li>
+        </ul>
+        <a onclick="display('linux_filesystem_structure', 12)" href="#linux_filesystem_structure"><b>linux filesystem structure</b></a>
+        <a onclick="display('user_and_group_management', 13)" href="#user_and_group_management"><b>user and group management</b></a>
+        <a onclick="display('file_permissions', 14)" href="#file_permissions"><b>file permission</b></a>
+        <a onclick="display('command_line_interface', 15)" href="#command_line_interface"><b>command line interface</b></a>
+        <ul>
+            <li><a onclick="display('command_line_interface', 16)" href="#what_is_a_shell">what is a shell</a>
+            <li><a onclick="display('command_line_interface', 17)" href="#what_is_the_terminal">what is the terminal</a>
+            <li><a onclick="display('command_line_interface', 18)" href="#which_shell_is_the_default_in_my_linux_distro">Which shell is the default in my linux distro ?</span> </a>
+            <li><a onclick="display('command_line_interface', 19)" href="#which_shell_should_I_use">Which shell should I use ?</a>
+            <li><a onclick="display('command_line_interface', 20)" href="#use_terminal_to_do_tasks">Use terminal to do tasks</a> 
+            <ul>
+                <li><a onclick="display('command_line_interface', 21)" href="#text_manipulations">TEXT MANIPULATIONS</a>
+                <li><a onclick="display('command_line_interface', 22)" href="#files_and_directories_manipulations">FILES AND DIRECTORIES MANIPULATIONS</a>
+                <li><a onclick="display('command_line_interface', 23)" href="#system">SYSTEM</a>
+                <li><a onclick="display('command_line_interface', 24)" href="#hardware_and_system">HARDWARE AND SYSTEM</a>
+                <li><a onclick="display('command_line_interface', 25)" href="#piping">Piping</a>
+                <li><a onclick="display('command_line_interface', 26)" href="#output_redirection">Output redirection</a>
+                <li><a onclick="display('command_line_interface', 27)" href="#running_multiple_commands_in_one_line">Running multiple commands in one line</a>
+                <li><a onclick="display('command_line_interface', 28)" href="#terminal_shortcut">Terminal shortcut</a>
+
+            </ul>
+        </ul>
+        <a onclick="display('package_manager', 29)" href="#package_manager"><b>package manager</b></a>
+        <a onclick="display('bash_scripting', 30)" href="#bash_scripting"><b>bash scripting</b></a>
+        <a onclick="display('conclusion', 31)" href="#conclusion"><b>conclusion</b></a>
+    </article>
+    <span class="material-symbols-outlined list" onclick="content_table()">
+        list
+    </span>
+    <article id="content">
+
+<body>
+    <div id="introduction" class="tuto "><br><br><br>
+        <div class="title">
+            <p class="c78 c35"><span class="c8 c38">INTRODUCTION</span></p>
         </div>
-        <div id="2">
-            Which command is used to list the contents of a directory in the Linux terminal?<br><br>
-            <span class="0" onclick="quiz(this)">pwd</span>
-            <span class="a" onclick="quiz(this)">ls</span>
-            <span class="0" onclick="quiz(this)">top</span>
-        </div>
-        <div id="3">
-            What is the command to create a new directory?<br><br>
-            <span class="0" onclick="quiz(this)">passwd</span>
-            <span class="a" onclick="quiz(this)">mkdir</span>
-            <span class="0" onclick="quiz(this)">touch</span>
-        </div>
-        <div id="4">
-            How would you navigate to your home directory in the Linux terminal?<br><br>
-            <span class="a" onclick="quiz(this)">cd ~</span>
-            <span class="0" onclick="quiz(this)">cd .</span>
-            <span class="0" onclick="quiz(this)">cd ..</span>
-        </div>
-        <div id="5">
-            How would you copy a file named "users.txt" from directory "~/Downloads" to directory "~/Documents" ?<br><br>
-            <span class="0" onclick="quiz(this)">cp ~/Documents ~/Downloads</span>
-            <span class="0" onclick="quiz(this)">cp ~/Documents/users.txt ~/Downloads/users.txt</span>
-            <span class="a" onclick="quiz(this)">cp ~/Downloads/users.txt ~/Documents/</span>
-        </div>
-        <div id="6">
-            What is the command to create a file?<br><br>
-            <span class="a" onclick="quiz(this)">touch filename</span>
-            <span class="0" onclick="quiz(this)">mkfile filenmae</span>
-            <span class="0" onclick="quiz(this)">both commands are correct</span>
-        </div>
-        <div id="7">
-            What is the command to display information about system and hardware<br><br>
-            <span class="0" onclick="quiz(this)">uname -a</span>
-            <span class="0" onclick="quiz(this)">neofetch</span>
-            <span class="a" onclick="quiz(this)">both commands are correct</span>
-        </div>
-        <div id="8">
-            What is the command to clear the terminal?<br><br>
-            <span class="a" onclick="quiz(this)">clear</span>
-            <span class="0" onclick="quiz(this)">echo</span>
-            <span class="0" onclick="quiz(this)">ps</span>
-        </div>
-        <div id="9">
-            What is the command to print text to terminal?<br><br>
-            <span class="a" onclick="quiz(this)">echo "text"</span>
-            <span class="0" onclick="quiz(this)">ls "text"</span>
-            <span class="0" onclick="quiz(this)">"text" echo</span>
-        </div>
-        <div id="10">
-            How would you display all the files in the directory "~/files" that has the extension ".txt"<br><br>
-            <span class="0" onclick="quiz(this)">ls ~/files grep ".txt"</span>
-            <span class="a" onclick="quiz(this)">ls ~/files | grep ".txt"</span>
-            <span class="0" onclick="quiz(this)">ls ~/files | get ".txt"</span>
-        </div>
-        <div id="11">
-            How would you run multiple commands in one line?<br><br>
-            <span class="a" onclick="quiz(this)">command1;command2;command3</span>
-            <span class="0" onclick="quiz(this)">command1,command2,command3</span>
-            <span class="0" onclick="quiz(this)">command1.command2.command3</span>
-        </div>
-        <div id="12">
-            What is the command to rewrite the file file.txt <br><br>
-            <span class="0" onclick="quiz(this)">echo "new content" >> file.txt</span>
-            <span class="0" onclick="quiz(this)">echo "new content" < file.txt</span>
-            <span class="a" onclick="quiz(this)">echo "new content" > file.txt</span>
-        </div>
-        <div id="13">
-            What is the command to append content to the file file.txt <br><br>
-            <span class="a" onclick="quiz(this)">echo "new content" >> file.txt</span>
-            <span class="0" onclick="quiz(this)">echo "new content" < file.txt</span>
-            <span class="0" onclick="quiz(this)">echo "new content" > file.txt</span>
-        </div>
-        <div id="14">
-            What is the /bin directory made for?<br><br>
-            <span class="0" onclick="quiz(this)">it is where program store temporary files</span>
-            <span class="a" onclick="quiz(this)">it holds files called binaries and can be executed</span>
-            <span class="0" onclick="quiz(this)">it store setting and configurations for many program</span>
-        </div>
-        <div id="15">
-            What is the /etc directory made for?<br><br>
-            <span class="0" onclick="quiz(this)">it is where program store temporary files</span>
-            <span class="0" onclick="quiz(this)">it holds files called binaries and can be executed</span>
-            <span class="a" onclick="quiz(this)">it store setting and configurations for many program</span>
-        </div>
-        <div id="16">
-            File permission defines ...<br><br>
-            <span class="0" onclick="quiz(this)">the size of the file</span>
-            <span class="a" onclick="quiz(this)">who can read and/or write to the file, and is the file executable or not</span>
-            <span class="0" onclick="quiz(this)">where the file is stored</span>
-        </div>
-        <div id="17">
-            Which one is correct?<br><br>
-            <span class="0" onclick="quiz(this)">package manager manipulate files and directories</span>
-            <span class="0" onclick="quiz(this)">package manager edit file permission</span>
-            <span class="a" onclick="quiz(this)">package manager install software</span>
-        </div>
-        <div id="18">
-            User and group management is <br><br>
-            <span class="0" onclick="quiz(this)">a way to manage users password</span>
-            <span class="0" onclick="quiz(this)">a way to install, upgrade, remove packages and software</span>
-            <span class="a" onclick="quiz(this)">a way to organize and control who can access and use the computer system</span>
-        </div>
-        <div id="19">
-            A shell is a<br><br>
-            <span class="a" onclick="quiz(this)">program that provides a command line interface for interacting with the OS</span>
-            <span class="0" onclick="quiz(this)">graphical user interface for interacting with the OS</span>
-            <span class="0" onclick="quiz(this)">program made for visiting the web</span>
-        </div>
-        <div id="20">
-            conditional statement in bash scripting<br><br>
-            <span class="0" onclick="quiz(this)">manage users files, directory and password</span>
-            <span class="a" onclick="quiz(this)">execute different blocks of code based on certain conditions</span>
-            <span class="0" onclick="quiz(this)">execute a block of code many time as long as a condition is true</span>
-        </div>
-        
+        <p class="c35 c79"><span class="c0">I want to tell you a story&mdash;a different one. Not about Linus Torvalds and
+                the creation of the Linux kernel or Richard Stallman&#39;s GNU Project. Those stories are well-documented in
+                numerous Linux books. Instead, I want to share the story of how you reclaim control over your
+                computer.</span></p>
+        <p class="c35 c37"><span class="c0">Linux is truly an extraordinary exception to the common saying, &quot;you get
+                what you pay for.&quot; Despite being freely available, Linux surpasses expectations in terms of
+                performance, features, and reliability. Its cost-free nature does not diminish its capabilities in any way.
+                Linux proves that exceptional quality and value can coexist without the need for a hefty price tag. Whether
+                it&#39;s the impressive performance, extensive features, or unwavering reliability, Linux stands as a
+                testament to the power of open-source software.</span></p>
+        <p class="c37 c35"><span>Starting a new skill can be overwhelming due to the vast amount of information available.
+                It&#39;s frustrating when you encounter unexplained concepts and feel more confused than enlightened.
+                However, &quot;Unleash the Power of Linux&quot; is here to help. No prior knowledge is assumed, and
+                you&#39;ll be guided step by step with a logical approach. New concepts and jargon will be explained in
+                plain language. Let&#39;s begin this journey together!</span></p>
+        <p class="c29 c7"><span class="c25 c8"></span></p>
     </div>
-  <script src="../script.js"></script>
-  <script src="script.js"></script>
+    <div id="introduction_to_linux" class="tuto"><br><br><br>
+        <div class="title">    
+            <p class="c78 c35"><span class="c8 c38">Introduction to Linux</span></p>
+        </div>
+        <div id="what_is_linux">
+            <br><br>
+            <p class="c63 c35"><span class="c21 c8">what is Linux ?</span></p>
+            <p class="c1 c35"><span>Linux is an open-source operating system initially developed by Linus Torvalds, it is based
+                    on Unix, nowadays Linux is used in many machines like router, web server and Iot device. </span></p>
+        </div>
+        <div id="advantages_of_using_linux">
+            <br><br>
+            <p class="c11"><span class="c21 c8">Advantages of using Linux</span></p>
+            <p class="c13 c35"><span class="c8">Open-source</span><span class="c0">: the source code of linux is available on
+                    the internet which means that anyone can modify it and distribute it. This created a large list of Linux
+                    distributions or distros like debian, ubuntu and arch.</span></p>
+            <p class="c13 c35"><span class="c8">Customizability: </span><span class="c0">linux users have the ability to
+                    customize and modify everything in their system including desktop environment, window manager and package
+                    manager.</span></p>
+            <p class="c13 c35"><span class="c8">Stability and security:</span><span class="c0">&nbsp;Linux is known for its
+                    stability and security. Due to its modular design and rigorous development process, it is less prone to
+                    crashes and malware attacks compared to other operating systems.</span></p>
+            <p class="c13 c35"><span class="c8">Scalability:</span><span class="c0">&nbsp;Linux powers a broad spectrum of
+                    devices, from personal computers to servers, embedded systems, and even supercomputers. Its scalability and
+                    efficiency make it a popular choice across various industries.</span></p>
+        </div>
+        <div id="disadvantages_of_using_linux">
+            <br><br>
+            <p class="c11"><span class="c21 c8">Disadvantages of using Linux</span></p>
+            <p class="c13 c35"><span class="c8">Gaming Support:</span><span class="c0">&nbsp;While Linux gaming has been
+                    improving in recent years, the gaming industry still primarily focuses on Windows as the primary platform.
+                    As a result, some popular games may not have native Linux versions, requiring workarounds or compatibility
+                    layers to run them on Linux.</span></p>
+            <p class="c13 c35"><span class="c8">Software Compatibility: </span><span class="c0">certain software may not have a
+                    version for linux, but there are often open-source alternatives available, also some linux software
+                    doesn&rsquo;t have a version for windows or macos.</span></p>
+        </div>
+        <div id="who_uses_linux_and_where">
+            <br><br>
+            <p class="c11"><span class="c21 c8">Who uses Linux and where</span></p>
+            <p class="c11"><span class="c0">Linux is used by many people and organizations. Here are some examples of those who
+                    use Linux:</span></p>
+            <p class="c11"><span class="c8">Individual Users: </span><span class="c0">many people prefers linux for their daily
+                    task on their computer</span></p>
+            <p class="c11"><span class="c8">Developers and Programmers: </span><span class="c0">Linux is popular among software
+                    developers and programmers. It provides a robust development environment, with a wide range of programming
+                    tools, libraries, and frameworks. Linux&#39;s command-line interface and support for scripting languages
+                    make it an ideal platform for development work.</span></p>
+            <p class="c11"><span class="c8">Server Administrators:</span><span class="c0">&nbsp;Server Administrators: Linux is
+                    widely used as a server operating system due to its stability, security, and scalability. It powers a
+                    significant portion of web servers, database servers, file servers, cloud infrastructure, and other types of
+                    server systems.</span></p>
+            <p class="c11"><span class="c8">Embedded Systems and IoT Devices:</span><span class="c0">&nbsp;Linux is widely used
+                    in embedded systems and Internet of Things (IoT) devices. Its small footprint, customization options, and
+                    compatibility with various hardware architectures make it suitable for powering devices such as routers,
+                    smart home devices, industrial automation systems, and IoT gateways.</span></p>
+            <p class="c11"><span class="c8">Hacker and pentester: </span><span class="c0">Linux is highly regarded among hackers
+                    and penetration testers for several reasons including his wide range of security tools.</span></p>
+        </div>
+    </div>
+    <div id="linux_installation" class="tuto"><br><br><br>
+        <div id="linux_installation">
+            <div class="title"><p class="c78 c35"><span class="c8 c38">Linux installation</span></p></div>
+            <p class="c11"><span>To learn linux you should use it, as Benjamin Franklin said: &quot;Tell me and I forget. Teach
+                    me and I remember. Involve me and </span><span>I learn</span><span class="c0">.&quot;</span></p>
+            <p class="c11"><span class="c0">You may say how do i install linux on my computer if i don&rsquo;t know how to use
+                    it, but you can install it beside your actual operating system, there are many ways to install linux.</span>
+            </p>
+        </div>
+        <div id="what_is_virtualbox">
+            <br><br>
+            <p class="c11"><span class="c21 c8">what is virtualbox ?</span></p>
+            <p class="c11"><span class="c0">Oracle VM VirtualBox is a popular and widely used virtualization software. It allows
+                    users to run multiple operating systems simultaneously on a single computer by creating virtual machines
+                    (VMs).</span></p>
+        </div>
+        <div id="install_virtualbox_in_windows">
+            <br><br>
+            <p class="c11"><span class="c21 c8">Install virtualbox in Windows</span></p>
+            <ol class="c5 lst-kix_bbkex8iocty4-0 start" start="1">
+                <li class="c11 c10 li-bullet-0"><span>first go to </span><span class="c64"><a class="c39"
+                            href="https://www.google.com/url?q=https://www.virtualbox.org/wiki/Downloads&amp;sa=D&amp;source=editors&amp;ust=1691097589081542&amp;usg=AOvVaw39I8jBXKj5dTFGB7otXxTK">https://www.virtualbox.org/wiki/Downloads</a></span><span>&nbsp;and
+                        download the package made for windows</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 540.50px; height: 317.82px;"><img
+                            alt="" src="../asset/images/image29.png"
+                            style="width: 540.50px; height: 317.82px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>download microsoft visual c++ 2019 from microsoft officiel website:
+                    </span><span class="c64"><a class="c39"
+                            href="https://www.google.com/url?q=https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view%3Dmsvc-170%23visual-studio-2015-2017-2019-and-2022&amp;sa=D&amp;source=editors&amp;ust=1691097589081966&amp;usg=AOvVaw1h6xHuaqGYM1PsfZkylNbT">https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022</a></span><span
+                        class="c0">&nbsp;. Make sure to download the package made for your cpu architecture.</span></li>
+            </ol>
+            <p class="c11 c30"><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 382.67px;"><img
+                        alt="" src="../asset/images/image14.png"
+                        style="width: 601.70px; height: 382.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <ol class="c5 lst-kix_bbkex8iocty4-0" start="3">
+                <li class="c11 c10 li-bullet-0"><span>open the visual c++ downloaded file, check the agree to license and click
+                        install</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 382.67px;"><img
+                            alt="" src="../asset/images/image25.png"
+                            style="width: 601.70px; height: 382.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>windows will ask you if you want to allow this app to make changes to your
+                        device click Yes.</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 381.33px;"><img
+                            alt="" src="../asset/images/image71.png"
+                            style="width: 601.70px; height: 381.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>the microsoft visual c++ is now installed and you can click on Close
+                        button</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 385.33px;"><img
+                            alt="" src="../asset/images/image31.png"
+                            style="width: 601.70px; height: 385.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>open the virtualbox downloaded file, and click Next</span><br><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 385.33px;"><img
+                        alt="" src="../asset/images/image63.png"
+                        style="width: 601.70px; height: 385.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>click Next</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 384.00px;"><img
+                            alt="" src="../asset/images/image21.png"
+                            style="width: 601.70px; height: 384.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>click Yes</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 382.67px;"><img
+                            alt="" src="../asset/images/image61.png"
+                            style="width: 601.70px; height: 382.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>click Yes</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 384.00px;"><img
+                            alt="" src="../asset/images/image11.png"
+                            style="width: 601.70px; height: 384.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>click Instal to begin the installation</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 382.67px;"><img
+                            alt="" src="../asset/images/image59.png"
+                            style="width: 601.70px; height: 382.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>click Finish, and now you have virtualbox installed</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 385.33px;"><img
+                            alt="" src="../asset/images/image42.png"
+                            style="width: 601.70px; height: 385.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+            </ol>
+            <p class="c11 c7"><span class="c20 c8"></span></p>
+            <p class="c11 c7"><span class="c20 c8"></span></p>
+        </div>
+        <div id="install_virtualbox_in_macos">
+            <br><br>
+            <p class="c11"><span class="c21 c8">Install virtualbox in MacOS</span></p>
+            <ol class="c5 lst-kix_txuw69yt0pax-0 start" start="1">
+                <li class="c11 c10 li-bullet-0"><span>first go to </span><span class="c64"><a class="c39"
+                            href="https://www.google.com/url?q=https://www.virtualbox.org/wiki/Downloads&amp;sa=D&amp;source=editors&amp;ust=1691097589083708&amp;usg=AOvVaw1jmd41qZxv3dHL4nV3MJ9R">https://www.virtualbox.org/wiki/Downloads</a></span><span>&nbsp;and
+                        download the package made for macos</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 354.67px;"><img
+                            alt="" src="../asset/images/image45.png"
+                            style="width: 601.70px; height: 354.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>double click to run the virtualbox installer (the file you download), this
+                        window will open</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 365.33px;"><img
+                            alt="" src="../asset/images/image5.png"
+                            style="width: 601.70px; height: 365.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>double click on &ldquo;VirtualBox.pkg&rdquo; and this window will
+                        open</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 370.67px;"><img
+                            alt="" src="../asset/images/image56.png"
+                            style="width: 601.70px; height: 370.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>click on continue</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 368.00px;"><img
+                            alt="" src="../asset/images/image53.png"
+                            style="width: 601.70px; height: 368.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>Then click on Install and wait for the installation to
+                        complete</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 370.67px;"><img
+                            alt="" src="../asset/images/image3.png"
+                            style="width: 601.70px; height: 370.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>now if you search for the application virtualbox you will find
+                        it</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 380.00px;"><img
+                            alt="" src="../asset/images/image8.png"
+                            style="width: 601.70px; height: 380.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+            </ol>
+            <p class="c11 c7"><span class="c21 c8"></span></p>
+            <p class="c11 c7"><span class="c21 c8"></span></p>
+        </div>
+        <div id="install_ubuntu_in_virtualbox">
+            <br><br>
+            <p class="c11"><span class="c8 c21">Install ubuntu in virtualbox</span></p>
+            <ol class="c5 lst-kix_mdjidvsy7cty-0 start" start="1">
+                <li class="c10 c11 li-bullet-0"><span class="c49">go to the officiel ubuntu website </span><span
+                        class="c64 c49"><a class="c39"
+                            href="https://www.google.com/url?q=https://ubuntu.com/download/desktop&amp;sa=D&amp;source=editors&amp;ust=1691097589084831&amp;usg=AOvVaw1AiYG7hsvNkRZjpLYw5VKz">https://ubuntu.com/download/desktop</a></span><span
+                        class="c49">&nbsp;and download the iso image for ubuntu</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 280.00px;"><img
+                            alt="" src="../asset/images/image34.png"
+                            style="width: 601.70px; height: 280.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">open virtualbox</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 318.67px;"><img
+                            alt="" src="../asset/images/image17.png"
+                            style="width: 601.70px; height: 318.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">click on &ldquo;new&rdquo;, and this window will
+                        open</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image55.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">choose name: ubuntu (or another name) type: Linux Version:
+                        ubuntu (64-bit). And choose the iso image of ubuntu. like this:</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image4.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span><br><span class="c28 c42">and then click on next.</span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">choose a username and a password in this window. And click
+                        next</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image47.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">choose how much the virtual machine will use in resources (cpu
+                        core and ram), make sure that you don&rsquo;t select all the available resources or your system may
+                        crash. And click next.</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image39.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">click next</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image73.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">click next and click finish</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image48.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">if the virtual machine didn&rsquo;t launch automatically,
+                        right click on the created icon then click start. when it start a window like this will open</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image36.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c49">wait until ubuntu asks for username and password and enter
+                        them then click enter to login.</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 317.33px;"><img
+                            alt="" src="../asset/images/image22.png"
+                            style="width: 601.70px; height: 317.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span class="c28 c42">Congratulations, you have installed Ubuntu in
+                        virtualbox.</span></li>
+            </ol>
+        </div>
+        <div id="install_ubuntu_on_a_computer">
+            <br><br>
+            <p class="c11"><span class="c21 c8">Install ubuntu in a computer</span></p>
+            <p class="c11"><span class="c0">To install Ubuntu directly on the computer you need to create a bootable usb.</span>
+            </p>
+            <ol class="c5 lst-kix_dywhvm9sovmu-0 start" start="1">
+                <li class="c11 c10 li-bullet-0"><span class="c49">go to the officiel ubuntu website </span><span
+                        class="c64 c49"><a class="c39"
+                            href="https://www.google.com/url?q=https://ubuntu.com/download/desktop&amp;sa=D&amp;source=editors&amp;ust=1691097589086690&amp;usg=AOvVaw0Tf5bgt0niKwzjoeIrljgS">https://ubuntu.com/download/desktop</a></span><span
+                        class="c49">&nbsp;and download the iso image for ubuntu</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 280.00px;"><img
+                            alt="" src="../asset/images/image34.png"
+                            style="width: 601.70px; height: 280.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>download Balena-etcher from their official website </span><span
+                        class="c64"><a class="c39"
+                            href="https://www.google.com/url?q=https://etcher.balena.io/%23download-etcher&amp;sa=D&amp;source=editors&amp;ust=1691097589087010&amp;usg=AOvVaw3jqid71jgmgxVRwlW1HQru">https://etcher.balena.io/#download-etcher</a></span><span>&nbsp;and
+                        run it</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 298.67px;"><img
+                            alt="" src="../asset/images/image26.png"
+                            style="width: 601.70px; height: 298.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>When balena-etcher start this window will open</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 374.67px;"><img
+                            alt="" src="../asset/images/image28.png"
+                            style="width: 601.70px; height: 374.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span><span class="c0">click on &ldquo;Flash from file&rdquo; and choose the iso image of
+                        ubuntu</span></li>
+                <li class="c11 c10 li-bullet-0"><span>After choosing the iso image click on &ldquo;Select target&rdquo; and
+                        choose your usb drive.</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 378.67px;"><img
+                            alt="" src="../asset/images/image33.png"
+                            style="width: 601.70px; height: 378.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span><span class="c0">and click on Select</span></li>
+                <li class="c11 c10 li-bullet-0"><span>click on &ldquo;Flash&rdquo;</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 373.33px;"><img
+                            alt="" src="../asset/images/image67.png"
+                            style="width: 601.70px; height: 373.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>when the process finish this will appear and you can close the
+                        window</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 373.33px;"><img
+                            alt="" src="../asset/images/image51.png"
+                            style="width: 601.70px; height: 373.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span></li>
+                <li class="c11 c10 li-bullet-0"><span>Booting from the usb: restart your computer and enter the boot setup by
+                        clicking multiple times on f10 or f12 (check your motherboard to see how), choose the option to boot
+                        from usb. follow the instruction in the ubuntu official website </span><span class="c64"><a class="c39"
+                            href="https://www.google.com/url?q=https://ubuntu.com/tutorials/install-ubuntu-desktop&amp;sa=D&amp;source=editors&amp;ust=1691097589087774&amp;usg=AOvVaw1HCns480okScmO7tqDNC3-">https://ubuntu.com/tutorials/install-ubuntu-desktop</a></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div id="linux_filesystem_structure" class="tuto"><br><br><br>
+        <div class="title"><p class="c78 c35"><span class="c8 c38">Linux filesystem structure</span></p></div>
+        <p class="c23"><span class="c0">Think of your computer as a big tree, and the Linux filesystem is like the branches
+                and leaves of that tree. Each part of the tree has a special purpose and holds different things.</span></p>
+        <p class="c14 c35"><span class="c0">At the very bottom of the tree is the root, represented by &quot;/&quot;. Just
+                like the roots of a tree, the root of the Linux filesystem is where everything starts. It is the main folder
+                that holds all other folders and files.</span></p>
+        <p class="c14 c35"><span class="c0">Now, let&#39;s look at some important branches of our Linux tree:</span></p>
+        <ol class="c5 lst-kix_fph4kzufq0po-0 start" start="1">
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/bin</span><span class="c0">&nbsp;(Binaries): This branch
+                    holds special files called &quot;binaries&quot; that make the computer do specific tasks. Binaries are
+                    like tools that help the computer run different programs and perform actions. if you created a program
+                    that do a specific task you can move it to the /bin directory so you can execute it from terminal with
+                    just typing its name</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/etc</span><span class="c0">&nbsp;(Etcetera): This branch
+                    has important files that control how the computer works. It keeps settings and configurations for
+                    various programs and system functions.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/var</span><span class="c0">&nbsp;(Variable): This branch
+                    holds files that can change or vary as we use the computer. For example, it keeps files related to
+                    ongoing tasks, temporary data, and system logs.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/usr</span><span class="c0">&nbsp;(User): This branch is
+                    like a big folder for all the extra things we install on the computer. It holds programs, libraries, and
+                    other files that users can use.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/boot </span><span class="c0">(Boot): This branch contains
+                    special files that help the computer start up when you turn it on. It&#39;s like the roots of the tree
+                    that support the computer&#39;s initial start.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/dev</span><span class="c0">&nbsp;(Devices): This branch
+                    represents all the devices connected to the computer, such as the keyboard, mouse, or printer. It&#39;s
+                    like the branches where different devices grow and connect to the tree.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/home</span><span class="c0">&nbsp;(Home): This branch is
+                    like a special place for each person who uses the computer. It has separate branches for each user,
+                    where they can store their files, pictures, and personal things.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/lib</span><span class="c0">&nbsp;(Library): This branch
+                    holds important files called libraries that other programs need to work correctly. Think of libraries as
+                    books that programs can borrow to do their tasks effectively.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/lib32</span><span class="c0">, /lib64, /libx32: These
+                    branches are like special library sections for different types of computers. They hold the right books
+                    (libraries) that programs need to run on different computer types.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/lost+found</span><span class="c0">&nbsp;(Lost and Found):
+                    This branch is like a special area where the computer puts files that it found in unexpected places or
+                    that got lost. It&#39;s like a place where the computer keeps things it wants to return to their
+                    rightful spots.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/media</span><span class="c0">&nbsp;(Media): This branch is
+                    where the computer puts removable devices like USB drives or CDs.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/mnt</span><span class="c0">&nbsp;(Mount): This branch is
+                    where you temporarily attach or &quot;mount&quot; other storage devices, like external hard drives or
+                    network drives. It&#39;s like adding extra branches to our tree to hold more things.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/opt</span><span class="c0">&nbsp;(Optional): This branch
+                    is for special software or programs that you choose to add to the computer. It&#39;s like a branch where
+                    you can place extra tools or toys that you want to use.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/proc</span><span class="c0">&nbsp;(Process): This branch
+                    provides information about what the computer is doing right now. It&#39;s like a branch where you can
+                    see and understand how the tree (computer) is working.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/root</span><span class="c0">&nbsp;(Root): This branch is
+                    like the main branch of the tree. It&#39;s the home of the most powerful user called &quot;root&quot;
+                    who can do anything on the computer. It&#39;s like the trunk of the tree that holds everything
+                    together.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/run</span><span class="c0">&nbsp;(Run): This branch holds
+                    temporary files and information that the computer needs during its current session. It&#39;s like a
+                    branch where the computer keeps things it needs for its ongoing tasks.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/sbin</span><span class="c0">&nbsp;(System Binaries): This
+                    branch holds important programs that only the system administrators use to manage and control the
+                    computer. It&#39;s like a branch where special tools for tree caretakers are kept.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/srv</span><span class="c0">&nbsp;(Service): This branch is
+                    used to store data and files for services or programs that the computer provides to others. It&#39;s
+                    like a branch where the tree shares its fruits with other creatures.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/sys</span><span class="c0">&nbsp;(System): This branch
+                    provides information and settings about the computer&#39;s hardware and devices. It&#39;s like a branch
+                    that tells us about the tree&#39;s internal structure and helps it function properly.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/tmp</span><span class="c0">&nbsp;(Temporary): This branch
+                    is like a temporary playground where programs can leave their files for a short time. It&#39;s like a
+                    branch where things are put for immediate use and not meant to stay for long.</span></li>
+        </ol>
+        <p class="c22 c35"><span class="c0">Imagine the leaves on the branches of our tree as files and smaller folders that
+                store different types of information. They can be documents, pictures, music, or even more folders.</span>
+        </p>
+        <p class="c14 c35"><span class="c0">Each part of the Linux filesystem has its own special purpose, just like each
+                branch of a tree. They all work together to make the computer function properly and help us do things like
+                writing, and surfing the internet.</span></p>
+    </div>
+    
+    <div id="user_and_group_management" class="tuto"><br><br><br>
+        <div class="title"><p class="c78 c35"><span class="c8 c38">User and Group management</span></p></div>
+        
+        <p class="c57 c35"><span class="c0">In Linux, user and group management is a way to organize and control who can
+                access and use the computer system. Imagine your computer is like a clubhouse, and users are the people who
+                are allowed to enter and use it.</span></p>
+        <p class="c14 c35"><span class="c0">A user is a person who has their own account on the computer. Each user has a
+                unique username, just like having your own secret code to enter the clubhouse. Users can have their own
+                files, folders, and settings on the computer. It helps to keep things separate and private, so each user can
+                have their own personal space. And all files have owner and group</span></p>
+        <p class="c11"><span class="c0">A group, on the other hand, is like a special club within the clubhouse. It is a way
+                to gather users who have something in common. For example, a group can be created for students, teachers, or
+                family members. By putting users into groups, it becomes easier to manage their permissions and access to
+                certain things. Groups can have special privileges or restrictions, depending on what the group is meant
+                for.</span></p>
+        <p class="c11"><span>With user and group management, the computer owner or administrator can decide who can access
+                specific files, folders, or programs using </span><span class="c8">file permissions</span><span>. It helps
+                to keep things organized and secure. For example, if you have a game on your computer, you can choose to
+                allow only certain users to play it. Or, if you have a family computer, you can create different accounts
+                for each family member, so everyone has their own space and settings.</span></p>
+        <p class="c11"><span class="c0">To see the owner and group of a file use</span></p><a
+            id="t.1cef3a3dcc24bb6f648a0b0fcbc8eedfa403c534"></a><a id="t.0"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">ls -ld filename</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c11"><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 58.67px;"><img
+                    alt="" src="../asset/images/image16.png"
+                    style="width: 601.70px; height: 58.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c11"><span class="c0">The first name is the username and the second is the groupname.</span></p>
+    </div>
+    
+    <div id="file_permissions" class="tuto"><br><br><br>
+        <div class="title"><p class="c78 c35"><span class="c8 c38">File permissions</span></p></div>
+        <p class="c11"><span class="c0">File permission defines who can read and/or write to the file, and is the file
+                executable or not.</span></p>
+        <p class="c11"><span class="c0">To see a file permissions you can open the terminal and run the command (replace
+                filename with the name of your file or directory)</span></p><a
+            id="t.1cef3a3dcc24bb6f648a0b0fcbc8eedfa403c534"></a><a id="t.1"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">ls -ld filename</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c11"><span class="c0">result:</span></p>
+        <p class="c11"><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 74.67px;"><img
+                    alt="" src="../asset/images/image60.png"
+                    style="width: 601.70px; height: 74.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c11"><span class="c0">The string &ldquo;drwxr-xr-x&rdquo; is the file permission, let&rsquo;s see what
+                each letter represent</span></p>
+        <ul class="c5 lst-kix_qw73sclbjoak-0 start">
+            <li class="c22 c10 c35 li-bullet-0"><span>The first character (</span><span class="c31 c8">d</span><span>)
+                    indicates that it is a directory. If it were a regular file, it would be represented by (</span><span
+                    class="c31 c8">-</span><span class="c42 c81">)</span><span class="c0">.</span></li>
+        </ul>
+        <p class="c14 c35"><span class="c0">The next three characters represent the permissions for the owner of the
+                directory:</span></p>
+        <ul class="c5 lst-kix_4dluzw3ktk30-0 start">
+            <li class="c4 c35 li-bullet-0"><span class="c31 c8">rwx</span><span>&nbsp;means the owner has read (</span><span
+                    class="c31 c8">r</span><span>), write (</span><span class="c31 c8">w</span><span>), and execute
+                    (</span><span class="c31 c8">x</span><span class="c0">) permissions on the directory. The owner can
+                    view, modify, and navigate into the directory.</span></li>
+        </ul>
+        <p class="c14 c35"><span class="c0">The next three characters represent the permissions for the group that the
+                directory belongs to:</span></p>
+        <ul class="c5 lst-kix_qk971412kqrs-0 start">
+            <li class="c4 c35 li-bullet-0"><span class="c31 c8">r-x</span><span>&nbsp;means the group has read (</span><span
+                    class="c31 c8">r</span><span>) and execute (</span><span class="c31 c8">x</span><span>) permissions, but
+                    does not have write (</span><span class="c31 c8">w</span><span class="c0">) permission. The group
+                    members can list the contents of the directory and navigate into it, but cannot modify or create new
+                    files or directories within it.</span></li>
+        </ul>
+        <p class="c14 c35"><span class="c0">The last three characters represent the permissions for other users (neither the
+                owner nor part of the group):</span></p>
+        <ul class="c5 lst-kix_783grzu5w78d-0 start">
+            <li class="c4 c35 li-bullet-0"><span class="c31 c8">r-x</span><span>&nbsp;means other users have read
+                    (</span><span class="c31 c8">r</span><span>) and execute (</span><span class="c31 c8">x</span><span>)
+                    permissions, but do not have write (</span><span class="c8 c31">w</span><span class="c0">) permission.
+                    Other users can view the directory&#39;s contents and navigate into it, but cannot make changes to
+                    it.</span></li>
+        </ul>
+        <p class="c14 c35"><span class="c0">So to read a file permission:</span></p>
+        <ol class="c5 lst-kix_foqtvi2ry6re-0 start" start="1">
+            <li class="c4 c35 li-bullet-0"><span class="c0">the first letter indicate the filetype</span></li>
+            <li class="c4 c35 li-bullet-0"><span class="c0">the next three letter indicate the owner permissions</span></li>
+            <li class="c4 c35 li-bullet-0"><span class="c0">the next three letter indicate the group permissions</span></li>
+            <li class="c4 c35 li-bullet-0"><span class="c0">the next three letter indicate others permissions</span></li>
+            <li class="c4 c35 li-bullet-0"><span>permissions letter are: </span><span class="c8 c58">r</span><span>&nbsp;for
+                    read, </span><span class="c58 c8">w</span><span>&nbsp;for write, </span><span
+                    class="c58 c8">x</span><span class="c0">&nbsp;for execute</span></li>
+        </ol>
+    </div>
+    <div id="command_line_interface" class="tuto"><br><br><br>
+        <div class="title">
+            <p class="c78 c35"><span class="c8 c38">Command line interface</span></p>
+            <p class="c86 c35 c30"><span class="c8 c93">Master the Terminal</span></p>
+        </div>
+        <p class="c23"><span class="c0">In the world of computing, where graphical user interfaces (GUIs) have become the
+                norm, the command line interface (CLI) continues to hold its ground as a powerful tool for performing tasks
+                efficiently and effectively. By leveraging the command line, also known as the terminal or shell, users can
+                tap into a realm of unparalleled control and flexibility. While GUIs provide visual representations of
+                operations, the command line goes beyond superficial appearances, allowing users to harness the true
+                potential of their machines.</span></p>
+        <p class="c14 c35"><span class="c0">The command line offers a direct and text-based interaction with the underlying
+                operating system, empowering users to execute commands, manipulate files and directories, manage processes,
+                and perform a wide range of tasks with remarkable speed and ease. By mastering the command line, individuals
+                can unlock a multitude of possibilities for automating tasks, navigating complex systems, and working with
+                large volumes of data more efficiently than ever before.</span></p>
+        <p class="c14 c35"><span class="c0">Unlike GUIs, which often require multiple clicks and navigation through menus,
+                the command line offers a concise and straightforward syntax that can be executed by simply typing commands
+                and pressing Enter. This streamlined approach not only saves time but also enables users to perform complex
+                operations with a few simple keystrokes. Whether you are a system administrator, a developer, a data
+                scientist, or an enthusiastic computer user, understanding the fundamentals of the command line is essential
+                for maximizing your productivity and unleashing the full potential of your computing environment.</span></p>
+        <p class="c14 c35"><span class="c0">In this guide, we will delve into the realm of command line, equipping you with
+                the knowledge and skills needed to harness the immense power and efficiency of the terminal. We will explore
+                essential commands for navigating the file system, manipulating files and directories, managing processes,
+                and configuring system settings. Along the way, we will uncover valuable tips, tricks, and shortcuts to
+                enhance your command line prowess.</span></p>
+        <p class="c14 c35"><span class="c53 c8"><br id="what_is_a_shell"><br><br> what is a shell</span></p>
+        <p class="c22 c35"><span class="c0">A shell is a command line interpreter or program that provides a user interface
+                for interacting with an operating system. It acts as a bridge between the user and the operating system,
+                allowing users to execute commands, run programs, and perform various tasks.</span></p>
+        <p class="c14 c35"><span class="c0">Shells provide a text-based interface where users can type commands and receive
+                output or perform actions based on those commands. They interpret and execute the commands entered by the
+                user, facilitating tasks such as file manipulation, process management, and system configuration.</span></p>
+        <p class="c14 c35"><span>There are different shells used in Linux, like bash, zsh, fish,
+            </span><span>ksh</span><span class="c0">, and more. But don&#39;t worry, you can choose the shell you prefer for
+                your Linux distribution. Many shells have similar syntax because they are based on bash.</span></p>
+        <p class="c14 c35"><span class="c21 c8"><br id="what_is_the_terminal"><br><br> what is the terminal</span></p>
+        <p class="c35 c60"><span>The terminal is a text-based interface that takes input from the user (commands) and
+                provides them to the shell to execute the commands.</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 333.33px;"><img
+                    alt="" src="../asset/images/image15.png"
+                    style="width: 601.70px; height: 333.50px; margin-left: 0.00px; margin-top: -0.09px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c35 c60"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 333.33px;"><img
+                    alt="" src="../asset/images/image6.png"
+                    style="width: 601.70px; height: 245.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c22 c35"><span class="c0">The terminal can be different and the prompt also, so don&rsquo;t be surprised
+                if you see another prompt like only the &ldquo;$&rdquo; sign or terminal theme.</span></p>
+        <p class="c14 c35"><span class="c21 c8"><br id="which_shell_is_the_default_in_my_linux_distro"><br><br> Which shell is the default in my linux distro ?</span></p>
+        <p class="c14 c35"><span class="c0">to know which shell is the default in your linux distro, open a terminal and run
+                this command</span></p><a id="t.e2d31106e74683bea8d28e6d1575cbc2f5818ae1"></a><a id="t.2"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c33">basename $SHELL</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">Here is a list of known linux shell:</span></p>
+        <ol class="c5 lst-kix_k94x61rrwuji-0 start" start="1">
+            <li class="c22 c10 li-bullet-0"><span class="c20 c8">Bash (Bourne Again SHell):</span></li>
+        </ol>
+        <ul class="c5 lst-kix_k94x61rrwuji-1 start">
+            <li class="c22 c32 li-bullet-0"><span class="c0">Default shell on many Linux distributions.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Extensive compatibility with POSIX standards and earlier
+                    shells.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Offers features such as command line editing, history, job
+                    control, and shell scripting capabilities.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Widely used and well-documented, with a large user and support
+                    community.</span></li>
+        </ul>
+        <ol class="c5 lst-kix_k94x61rrwuji-0" start="2">
+            <li class="c22 c10 li-bullet-0"><span class="c20 c8">Zsh (Z Shell):</span></li>
+        </ol>
+        <ul class="c5 lst-kix_k94x61rrwuji-1 start">
+            <li class="c22 c32 li-bullet-0"><span class="c0">Extends and improves upon features from other shells, including
+                    Bash and Ksh.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Offers advanced tab completion, spelling correction, globbing
+                    options, and powerful scripting capabilities.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Highly customizable with themes and plugins.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Improved interactive usage experience, with advanced prompt
+                    customization options.</span></li>
+        </ul>
+        <ol class="c5 lst-kix_k94x61rrwuji-0" start="3">
+            <li class="c22 c10 li-bullet-0"><span class="c20 c8">Ksh (Korn Shell):</span></li>
+        </ol>
+        <ul class="c5 lst-kix_k94x61rrwuji-1 start">
+            <li class="c22 c32 li-bullet-0"><span class="c0">Combines features from the Bourne Shell (sh) and C Shell
+                    (csh).</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Provides advanced scripting capabilities, including associative
+                    arrays, advanced string manipulation, and built-in math operations.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Not as widely used as Bash or Zsh, but popular on some Unix
+                    systems.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Good choice for scripting complex tasks and for users familiar
+                    with the Bourne Shell syntax.</span></li>
+        </ul>
+        <ol class="c5 lst-kix_k94x61rrwuji-0" start="4">
+            <li class="c22 c10 li-bullet-0"><span class="c20 c8">Fish (Friendly Interactive SHell):</span></li>
+        </ol>
+        <ul class="c5 lst-kix_k94x61rrwuji-1 start">
+            <li class="c22 c32 li-bullet-0"><span class="c0">Designed to be user-friendly and intuitive, especially for new
+                    users.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Offers features like syntax highlighting, autosuggestions, and
+                    a clean, modern design.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Provides an extensive set of built-in functions and convenient
+                    defaults.</span></li>
+            <li class="c22 c32 li-bullet-0"><span class="c0">Emphasizes ease of use and discoverability.</span></li>
+        </ul>
+        <p class="c22"><span>In my linux I use zsh as my default shell since it has a good syntax highlight and
+                auto-suggestions.</span></p>
+        <p class="c22"><span class="c21 c8"><br id="which_shell_should_I_use"><br><br> Which shell should I use ?</span></p>
+        <p class="c22"><span>The shell you should use depends on your taste, choose one from the list or try them all to
+                know the best shell for you.</span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c21 c8"><br id="use_terminal_to_do_tasks"><br><br>Use terminal to do tasks</span></p>
+        <p class="c57"><span class="c0">when you open the terminal it opens in the home directory by default which is
+                indicated with the sign &ldquo;~&rdquo;.</span></p>
+        <p class="c57 c7"><span class="c0"></span></p>
+        <p class="c13 c7"><span class="c0"></span></p>
+        <p class="c13 c7"><span class="c0"></span></p>
+        <p class="c13"><span class="c8 c28"><br id="text_manipulations"><br><br>TEXT MANIPULATIONS</span></p>
+        <hr>
+        <p class="c78 c7"><span class="c0"></span></p>
+        <p class="c57 c7"><span class="c0"></span></p>
+        <p class="c13"><span class="c20 c8">Print text to terminal</span></p>
+        <p class="c13"><span>To print text to terminal we use &ldquo;echo&rdquo;</span></p>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 78.67px;"><img
+                    alt="" src="../asset/images/image46.png"
+                    style="width: 601.70px; height: 78.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c0">If you want to create a new line use \n:</span></p>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 58.67px;"><img
+                    alt="" src="../asset/images/image18.png"
+                    style="width: 601.70px; height: 58.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Clear the terminal</span></p>
+        <p class="c13"><span class="c0">you can remove all the previous command output by running</span></p><a
+            id="t.40e6f9c2dec8dc640a2ee32c656177e8ee33b786"></a><a id="t.3"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">clear</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13 c7"><span class="c0"></span></p>
+        <p class="c13"><span class="c28 c8"><br id="files_and_directories_manipulations"><br><br>FILES AND DIRECTORIES MANIPULATIONS</span></p>
+        <hr>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c13"><span class="c20 c8">List files and directories</span></p>
+        <p class="c1"><span class="c0">If you want to see files and directories existing in this directory you can run the
+                command</span></p><a id="t.df490b2b864f56a745f1892bac59d9fe8ad36c29"></a><a id="t.4"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">ls</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">result:</span></p>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 73.33px;"><img
+                    alt="" src="../asset/images/image37.png"
+                    style="width: 601.70px; height: 73.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c1"><span class="c0">But there are hidden files and directories which start with a point, to list them in
+                addition to normal files use the command</span></p><a id="t.ccdab57daab0fee165ec7ca7acb3c5a90515572a"></a><a
+            id="t.5"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">ls -a</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">result:</span></p>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 88.00px;"><img
+                    alt="" src="../asset/images/image72.png"
+                    style="width: 601.70px; height: 88.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span class="c0">as you can see there are other files which start with a point in their
+                name</span></p>
+        <p class="c1"><span class="c0">If you want to see more information like file permissions use the command ls with the
+                argument &nbsp;-l.</span></p><a id="t.2b1867fa7ac0c93cee35b5fc014f5340ed17b141"></a><a id="t.6"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9 c70">ls -l</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">result:</span></p>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 101.33px;"><img
+                    alt="" src="../asset/images/image7.png"
+                    style="width: 601.70px; height: 101.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c1"><span class="c0">As you can see there is other information about the files.</span></p>
+        <p class="c1"><span class="c0">What if we want to list hidden files and their information, we can combine two
+                argument -a and -l like this:</span></p><a id="t.b9bb197364f6fd1407066f1a84b3d24ef29c5113"></a><a
+            id="t.7"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">ls -a -l</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">result:</span></p>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 148.00px;"><img
+                    alt="" src="../asset/images/image35.png"
+                    style="width: 601.70px; height: 148.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c0">By default the ls command list files of the working directory you can use another
+                directory with:</span></p><a id="t.8942776fe916c5180b2258dfcd1af43c56db325a"></a><a id="t.8"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">ls directory_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Print the content of a file</span></p>
+        <p class="c13"><span>Use the command cat to print the content of the file to terminal like this:</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 49.33px;"><img
+                    alt="" src="../asset/images/image62.png"
+                    style="width: 601.70px; height: 49.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Change the working directory</span></p>
+        <p class="c13"><span>Use cd to jump to another directory</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 64.00px;"><img
+                    alt="" src="../asset/images/image50.png"
+                    style="width: 601.70px; height: 64.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span class="c0">the working directory changed to Desktop</span></p>
+        <p class="c13"><span class="c20 c8">Show the current working directory path</span></p>
+        <p class="c13"><span>Use pwd</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 56.00px;"><img
+                    alt="" src="../asset/images/image70.png"
+                    style="width: 601.70px; height: 56.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Create and Remove a directory</span></p>
+        <p class="c13"><span>Create a directory with </span><span>mkdir</span><span>&nbsp;and remove it with
+                rmdir</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 185.33px;"><img
+                    alt="" src="../asset/images/image1.png"
+                    style="width: 601.70px; height: 185.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Move, copy and rename a file</span></p>
+        <p class="c13"><span>Use the command mv to move files and cp to copy them from a location to another one</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 76.00px;"><img
+                    alt="" src="../asset/images/image24.png"
+                    style="width: 601.70px; height: 76.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 76.00px;"><img
+                    alt="" src="../asset/images/image54.png"
+                    style="width: 601.70px; height: 76.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span class="c0">The difference between cp and mv is that mv remove the file from its
+                old location while cp keep the file in the two locations, you can copy or move multiple file by adding their
+                name before the destination like this:</span></p><a id="t.b0a9790da0ccbb2a7c35387f6fc2e4ae94b8232d"></a><a
+            id="t.9"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">cp/mv file1 file2 directory3 destination</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">you can also copy or move the directory.</span></p>
+        <p class="c1"><span class="c0">The mv command is used also to change a filename with</span></p><a
+            id="t.391a66ff584f9e00d1b1ebb317270bf005ca27cd"></a><a id="t.10"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">mv oldfilename newfilename</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Create a file</span></p>
+        <p class="c13"><span>The touch command is used to create an empty file</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 76.00px;"><img
+                    alt="" src="../asset/images/image2.png"
+                    style="width: 601.70px; height: 76.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Find a file</span></p>
+        <p class="c13"><span class="c0">find command is used to search for a file in the specified directory in active mode
+                which mean that it open and read directory to find files, to search for a file with the exact name use
+            </span></p><a id="t.ef5d5a979e79337b8c10f77c97de06b9b1ac054b"></a><a id="t.11"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">find /path -name </span><span class="c40">&quot;exactname&quot;</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">if you are not sure about the name of the file you can use the * sign, the asterisk
+                symbol (*) is known as a wildcard or a globbing character. It is used for pattern matching and represents
+                any number of characters (including zero characters) in a filename or a string.</span></p><a
+            id="t.a99d294c4e4106a42a1b9009dda0378f8f679a81"></a><a id="t.12"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">find /path -name </span><span class="c40">&quot;*ctnam*&quot;</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">or</span></p><a id="t.d976eae065a0287264039b8e5bd8a0e771c1a6f3"></a><a id="t.13"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">find /path -name </span><span class="c40">&quot;*ctnam*.txt&quot;</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">this will output only files that end with .txt and have the string
+                &ldquo;ctnam&rdquo; in their names.</span></p>
+        <p class="c1"><span class="c0">Locate is a command used to search for files in passive mode, it has a database to
+                search in. You can use the locate command like this:</span></p><a
+            id="t.ca3b854f1cf10a30076cfbc7fd40778b442aa167"></a><a id="t.14"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">locate expression</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">you can also use the asterisk symbol like in find command.</span></p>
+        <p class="c1"><span class="c0">locate is faster than find since it uses a database of existing files but if the file
+                is newly created and not indexed by locate use find to search all the system.</span></p>
+        <p class="c13"><span class="c20 c8">Dealing with large files</span></p>
+        <p class="c13"><span class="c0">It&rsquo;s time consuming to open and manipulate large files, but you can use the
+                tail command to make it faster</span></p>
+        <ol class="c5 lst-kix_m7zao1hdy6ms-0 start" start="1">
+            <li class="c13 c10 li-bullet-0"><span class="c0">watching changes in a file: you can use tail to watch live
+                    changes made to the file</span></li>
+        </ol><a id="t.d7d1c6b9ecf86c3061e0d984c3bcd986db8a7c45"></a><a id="t.15"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">tail -f file.txt</span></p>
+                </td>
+            </tr>
+        </table>
+        <ol class="c5 lst-kix_m7zao1hdy6ms-0" start="2">
+            <li class="c13 c10 li-bullet-0"><span class="c0">print the last 10 lines of a file</span></li>
+        </ol><a id="t.22b4f25ca2ed0e898235c6001717b09b6d2d5aec"></a><a id="t.16"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">tail -n 10 file</span></p>
+                </td>
+            </tr>
+        </table>
+        <ol class="c5 lst-kix_m7zao1hdy6ms-0" start="3">
+            <li class="c13 c10 li-bullet-0"><span class="c0">print the file content starting from line 10</span></li>
+        </ol><a id="t.5d7efca3cefeb8f3e5d9c3c2bf5e8cf40cde516b"></a><a id="t.17"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">tail -n +10 file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Sorting a file</span></p>
+        <p class="c13"><span class="c0">sorting a file mean to arrange his lines alphabetically or numerically</span></p>
+        <p class="c13"><span class="c0">To sort in ascending use</span></p><a
+            id="t.f752e5748de765456877670813e3984cf7781b51"></a><a id="t.18"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sort filename.txt</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">To sort in descending use</span></p><a
+            id="t.bf47cee76e9f37a7dc426e0a9d5d02481a1ef157"></a><a id="t.19"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sort -r filename.txt</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Search for expression in a file</span></p>
+        <ol class="c5 lst-kix_8wf61qq8gbib-0 start" start="1">
+            <li class="c13 c10 li-bullet-0"><span class="c20 c8">simple grep:</span></li>
+        </ol>
+        <p class="c13"><span class="c0">Sometimes, you have a long file and you want to search for one line or more that
+                contain an expression, you can use the grep command to search in a file like this:</span></p><a
+            id="t.7cb28f02f3d7eec1b555d010aec267e1397de625"></a><a id="t.20"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">grep expression file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">example:</span></p>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 160.00px;"><img
+                    alt="" src="../asset/images/image44.png"
+                    style="width: 601.70px; height: 160.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <ol class="c5 lst-kix_8wf61qq8gbib-0" start="2">
+            <li class="c13 c10 li-bullet-0"><span class="c20 c8">grep with regex:</span></li>
+        </ol>
+        <p class="c13"><span class="c0">regex or regular expressions are like codes and patterns that can find a specific
+                string in a text following rules. For example you can find all words that start with &ldquo;a&rdquo; and end
+                with &ldquo;b&rdquo;.</span></p>
+        <ul class="c5 lst-kix_i6ijoepu05k7-0 start">
+            <li class="c13 c10 li-bullet-0"><span class="c0">for example to search for a word that start with
+                    &ldquo;z&rdquo; and end with &ldquo;w&rdquo; use</span></li>
+        </ul><a id="t.d3162b0413705b3f6ebf1fe8edfa6cf5d5cade6c"></a><a id="t.21"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">grep -E </span><span class="c40">&quot;\bz\w*w\b&quot; file.txt</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">The \bz indicates that &ldquo;z&rdquo; is the first character in the word.</span>
+        </p>
+        <p class="c13"><span class="c0">The \w indicate any single character, when adding * mean any number of
+                characters.</span></p>
+        <p class="c13"><span class="c0">The w\b indicates that &ldquo;w is the last character in the word.</span></p>
+        <p class="c13"><span class="c0">Note: when using regular expressions with grep use the -E argument.</span></p>
+        <p class="c13"><span class="c20 c8">Print a file without duplicate lines</span></p>
+        <p class="c13"><span class="c0">The uniq command can print a file without printing duplicates lines multiple times
+                you can use it like this:</span></p><a id="t.3c01cb2a45ceaed9cefa2c6e509cc3f224ae90f4"></a><a id="t.22"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">uniq file.txt</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Find the difference between two files</span></p>
+        <p class="c13"><span class="c0">let&rsquo;s say you have two files and you can&rsquo;t find the difference between
+                them, you can use diff</span></p><a id="t.8b40378892d8c4d38a14c27e7690ed3d5d5ef79f"></a><a id="t.23"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">diff file1.txt file2.txt</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Change the owner of a file</span></p>
+        <p class="c13"><span class="c0">as you learned in chapter &ldquo;user and group management&rdquo; files have owner
+                and you can change the owner of a file with chown</span></p><a
+            id="t.04c14bf71f440d3ad8ce8cf6cf4c04301d0fb075"></a><a id="t.24"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">chown new_owner file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">if the permission is denied use sudo, sudo run a command as the root user</span></p>
+        <a id="t.19b95fc4cb4b0bdf207dc4f088d300a6de1dfb79"></a><a id="t.25"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo </span><span class="c33">command</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">so use</span></p><a id="t.2d5e5d6d04340818c0e690472223f1cbbc2f0c3f"></a><a
+            id="t.26"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo chown new_user file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">to change the owner of all files inside a directory use </span></p><a
+            id="t.ecdebbb7b3879b88048b0f46c8382f2856ddfbfc"></a><a id="t.27"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo chown -R new_user directory</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Change the group of a file</span></p>
+        <p class="c13"><span class="c0">as you learned in chapter &ldquo;user and group management&rdquo; files have group
+                and you can change the group of a file with chgrp</span></p><a
+            id="t.2de851f40c9b23b376d6d4c86025dec0303c93c0"></a><a id="t.28"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo chgrp group file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">or with chown</span></p><a id="t.a290bd936541de852d32ac7fcf8ec84fae295f5a"></a><a
+            id="t.29"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo chown :group file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">to change the group of all files inside a directory use</span></p><a
+            id="t.d86d86f271a9549424af8e9134289e14279318df"></a><a id="t.30"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo chgrp -R group directory</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">or</span></p><a id="t.dc56b750da72473db23fc1ef70fa2740c10d4aba"></a><a
+            id="t.31"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo chown -R :group directory</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">you can change the owner and group in the same command with chown:</span></p><a
+            id="t.d30c1198168d7365ab4266f3633dce5f9b23fb67"></a><a id="t.32"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">sudo chown owner:group file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Change the mode</span></p>
+        <p class="c13"><span>as you learned in chapter file permissions, files have permissions for owner, group and others.
+                To edit these permissions we use the command </span><span class="c9 c70">chmod permissions file</span></p>
+        <p class="c13"><span class="c0">permissions are set like this
+                u=owner_permission,g=group_permission,o=others_permission</span></p>
+        <p class="c13"><span class="c0">you can set the permissions in two presentations, octal and symbolic. Symbolic
+                provide more human readable way, &ldquo;w&rdquo; present write permission, &ldquo;r&rdquo; present read
+                permission, and &ldquo;x&rdquo; present execute permission, so to set permission that give read, write,
+                execute access to owner and read, execute to group, and read to others in symbolic presentation use</span>
+        </p><a id="t.dcea27924a38b103e2735cb3a1e3770192931a68"></a><a id="t.33"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">chmod u=rwx,g=rx,o=r file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">in octal presentation we use number:</span></p>
+        <ul class="c5 lst-kix_df6iq2qtp2jt-0 start">
+            <li class="c22 c10 li-bullet-0"><span class="c8">4</span><span class="c0">&nbsp;stands for
+                    &quot;read&quot;,</span></li>
+            <li class="c22 c10 li-bullet-0"><span class="c8">2</span><span class="c0">&nbsp;stands for
+                    &quot;write&quot;,</span></li>
+            <li class="c10 c22 li-bullet-0"><span class="c8">1</span><span class="c0">&nbsp;stands for
+                    &quot;execute&quot;,</span></li>
+        </ul>
+        <p class="c22"><span class="c0">so the permission read, write, execute is 4+2+1 and it&rsquo;s 7</span></p>
+        <p class="c22"><span class="c0">and read, execute is 4+1 which is 5</span></p>
+        <p class="c22"><span class="c0">and read is 4, so you can use</span></p><a
+            id="t.397bdc1bd4e4ce7ba9613a2fc459d25c41932012"></a><a id="t.34"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">chmod 754 file</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c22"><span class="c0">the first number is for owner, the second is for group and the third is for
+                others</span></p>
+        <p class="c13"><span class="c20 c8">Calculate the size of a directory or more</span></p>
+        <p class="c13"><span>To see the size of a directory use </span><span class="c9">du directory </span><span
+                class="c0">&nbsp;</span></p>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 78.67px;"><img
+                    alt="" src="../asset/images/image58.png"
+                    style="width: 601.70px; height: 78.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c0">But it print the size in non human readable format, to print it in human readable
+                format use the -h argument</span></p>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 78.67px;"><img
+                    alt="" src="../asset/images/image13.png"
+                    style="width: 601.70px; height: 78.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c28 c8"><br id="system"><br><br>SYSTEM</span></p>
+        <hr>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <ul class="c5 lst-kix_3vdbr77otnj2-0 start">
+            <li class="c13 c10 li-bullet-0"><span class="c0">general command:</span></li>
+        </ul>
+        <ol class="c5 lst-kix_g45gdfg50g8k-0 start" start="1">
+            <li class="c13 c32 li-bullet-0"><span>Get disk usage information, with &rarr;use </span><span
+                    class="c70 c8 c83">df</span></li>
+            <li class="c13 c32 li-bullet-0"><span>show all process &rarr;use </span><span class="c9">ps ax</span></li>
+        </ol>
+        <p class="c13 c89"><span class="c0">Processes in Linux are running instances of programs or tasks that are executed
+                by the operating system. Each process has its own unique process identifier (PID) and consumes system
+                resources, such as CPU time, memory, and input/output.</span></p>
+        <ol class="c5 lst-kix_g45gdfg50g8k-0" start="3">
+            <li class="c13 c32 li-bullet-0"><span>display dynamic real time information about running process like task
+                    manager &rarr; use </span><span class="c9">top</span></li>
+        </ol>
+        <p class="c13"><span class="c20 c8">Stop running process</span></p>
+        <p class="c13"><span class="c0">To stop a running process using its PID you can use</span></p><a
+            id="t.eac750f6b23d625b53e6a135eb107a59e41f9b23"></a><a id="t.35"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c33">kill</span><span class="c9">&nbsp;PID</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">you can also kill all process with a specific name for example if you have multiple
+                process with the name i3wm you can use </span></p><a id="t.ccb49a9367983c4e140186525b335ef61f067361"></a><a
+            id="t.36"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">killall i3wm</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">you must use the complete name else it won&rsquo;t kill the process</span></p>
+        <p class="c13"><span class="c20 c8">Pass a command to background </span></p>
+        <p class="c13"><span class="c0">When you pass a command to the background you won&rsquo;t see any output and you can
+                execute more commands in the terminal session, but the command is still running in the background.</span>
+        </p>
+        <p class="c13"><span>To pass command to the background you can append &ldquo;&amp;&rdquo; in the end of the
+                command</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 69.33px;"><img
+                    alt="" src="../asset/images/image10.png"
+                    style="width: 601.70px; height: 69.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Show command running in background</span></p>
+        <p class="c13"><span>To see all commands running in the background use the command </span><span
+                class="c33">jobs</span></p>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 50.67px;"><img
+                    alt="" src="../asset/images/image19.png"
+                    style="width: 601.70px; height: 50.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Resume suspended job in the background</span></p>
+        <p class="c13"><span>When a command is running you can suspend it by pressing Ctrl+z and it will be displayed when
+                running </span><span class="c33">jobs</span><span>&nbsp;</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 68.00px;"><img
+                    alt="" src="../asset/images/image30.png"
+                    style="width: 601.70px; height: 68.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span>you can resume the command by using </span><span class="c33">bg
+                [JOB_SPEC]</span><span class="c0">&nbsp;to resume it in the background. Where JOB_SPEC can be one of the
+                following:</span></p>
+        <ul class="c5 lst-kix_c2hwwlnua8ch-0 start">
+            <li class="c22 c10 li-bullet-0"><span>%n - where </span><span class="c76">n</span><span class="c0">&nbsp;is the
+                    job number</span></li>
+            <li class="c22 c10 li-bullet-0"><span>%abc - refers to a job started by a command beginning with </span><span
+                    class="c65 c42">abc</span></li>
+            <li class="c22 c10 li-bullet-0"><span>%?abc - refers to a job started by a command containing </span><span
+                    class="c42 c65">abc</span></li>
+            <li class="c22 c10 li-bullet-0"><span class="c0">%- - specifies the previous job</span></li>
+        </ul>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 68.00px;"><img
+                    alt="" src="../asset/images/image49.png"
+                    style="width: 601.70px; height: 68.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Resume a job in the foreground (terminal)</span></p>
+        <p class="c13"><span>What if you want to resume the job in the foreground and not in the background, you can use
+            </span><span class="c33">fg</span><span class="c9">&nbsp;[JOB_SPEC]</span><span>&nbsp;instead of </span><span
+                class="c33">bg</span><span class="c9">&nbsp;[JOB_SPEC]</span></p>
+        <p class="c13"><span class="c8 c20">Create an alias</span></p>
+        <p class="c13"><span class="c0">Sometimes, you &nbsp;run a command with a set of arguments multiple times and you
+                are tired of repeating this long command, so you can create an alias.</span></p>
+        <p class="c13"><span>An alias is one command that runs another command with a set of
+            </span><span>argument,</span><span class="c0">&nbsp;it&rsquo;s like a shortcut for a long command.</span></p>
+        <p class="c13"><span>To create an alias you can use the command </span><span class="c33">alias</span><span
+                class="c9">&nbsp;name=</span><span class="c40">&quot;cmd &ndash;arg1 &ndash;arg2&quot;</span><span
+                class="c0">. For example to create an alias for the command ls with the argument -l and -a to show more
+                informations you can run the command:</span></p><a id="t.be18421cd7a83dfb2a9d1abfa055fb105a33db44"></a><a
+            id="t.37"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c33">alias</span><span class="c9">&nbsp;</span><span
+                            class="c9">lss</span><span class="c9">=</span><span class="c40">&quot;ls -a -l&quot;</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span>This command create an alias named </span><span>lss</span><span>&nbsp;that run the command
+            </span><span class="c9">ls -a -l</span></p>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 198.67px;"><img
+                    alt="" src="../asset/images/image66.png"
+                    style="width: 601.70px; height: 198.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c0">To remove an alias you can use the command</span></p><a
+            id="t.e7c8a354902efd540c85545a0ba9f57fd62fbad8"></a><a id="t.38"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c33">unalias</span><span class="c9">&nbsp;</span><span
+                            class="c9">aliasName</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c0">example </span></p><a id="t.3bd57889f3ac029c1e4658ee4841de023c151b2a"></a><a
+            id="t.39"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c33">unalias</span><span class="c9 c70">&nbsp;lss</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c13"><span class="c20 c8">Locate the executable file associated with a command</span></p>
+        <p class="c13"><span>When you run a command you actually run an executable file associated with it except shell
+                built-in command that may doesn&rsquo;t have an executable file, sometimes they are included in the shell
+                executable, to find the file you can use the command </span><span class="c33">which</span><span
+                class="c9 c70">&nbsp;command_name</span></p>
+        <p class="c13"><span>To show all paths to the executable file of a command use the -a argument.</span></p>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 288.00px;"><img
+                    alt="" src="../asset/images/image43.png"
+                    style="width: 601.70px; height: 288.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Make a command run even if you close the session</span></p>
+        <p class="c13"><span>Sometimes, you need to keep a command running even if you close the session. For example when
+                closing the terminal you close the session, or when you connected to another computer remotely and then get
+                disconnected, the session will be closed and there are commands that you don&rsquo;t want them to stop
+                running so you can use the </span><span class="c9">nohup</span><span class="c9">&nbsp;</span><span
+                class="c33">command &nbsp;</span><span>and you can run it also in the background with </span><span
+                class="c9">nohup</span><span class="c9">&nbsp;</span><span class="c33">command</span><span
+                class="c9">&nbsp;&amp;</span><span>&nbsp;.The output of the command will be written in the file </span><span
+                class="c76">nohup.out </span></p>
+        <p class="c13"><span class="c20 c8">Print username of the user currently logged in to terminal</span></p>
+        <p class="c13"><span>Just use </span><span class="c9">whoami</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 50.67px;"><img
+                    alt="" src="../asset/images/image23.png"
+                    style="width: 601.70px; height: 50.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Display users logged in to the system</span></p>
+        <p class="c13"><span>just use </span><span class="c9">who</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 65.33px;"><img
+                    alt="" src="../asset/images/image40.png"
+                    style="width: 601.70px; height: 65.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Switch to another user in terminal</span></p>
+        <p class="c13"><span>Use </span><span class="c9">su another_username</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 73.33px;"><img
+                    alt="" src="../asset/images/image9.png"
+                    style="width: 601.70px; height: 73.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Change the password of a user</span></p>
+        <p class="c13"><span class="c0">To change the password of a user you can use the passwd command, but you must be the
+                root or use sudo or have the user&#39;s old password.</span></p>
+        <p class="c13"><span>When running from the root or using sudo, you don&rsquo;t need the user&rsquo;s
+                password:</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 101.33px;"><img
+                    alt="" src="../asset/images/image68.png"
+                    style="width: 601.70px; height: 101.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span>When running from normal users without sudo, you can only change the password of
+                current user and you need the old password:</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 122.67px;"><img
+                    alt="" src="../asset/images/image69.png"
+                    style="width: 601.70px; height: 122.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c20 c8">Show commands history</span></p>
+        <p class="c13"><span>You can use the </span><span class="c33">history</span><span>&nbsp;command to achieve this
+                purpose. This show commands with numbers</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 170.67px;"><img
+                    alt="" src="../asset/images/image20.png"
+                    style="width: 601.70px; height: 170.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13"><span class="c0">You can use the syntax !&lt;command number&gt; to repeat the command</span></p>
+        <p class="c13"><span class="c28 c8"><br id="hardware_and_system"><br><br>HARDWARE AND SYSTEM</span></p>
+        <hr>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c13"><span class="c20 c8">Uname</span></p>
+        <p class="c13"><span class="c0">Run the uname command to print kernel name, add:</span></p>
+        <ul class="c5 lst-kix_thu7ptbfy4h0-0 start">
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp;-a, --all &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print all information, in the following
+                    order,except omit -p and -i if unknown.</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -s, --kernel-name &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print the kernel name</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -n, --nodename &nbsp; &nbsp; &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print the network node hostname</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -r, --kernel-release
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print the kernel release</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -v, --kernel-version
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print the kernel version</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -m, --machine &nbsp; &nbsp; &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print the machine hardware name</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -p, --processor &nbsp; &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print the processor type (non-portable)</span>
+            </li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -i, --hardware-platform &nbsp;print the hardware
+                    platform (non-portable)</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">&nbsp; -o, --operating-system &nbsp; print the operating
+                    system</span></li>
+        </ul>
+        <p class="c13"><span class="c20 c8">Neofetch</span></p>
+        <p class="c13"><span>Neofetch is a command-line tool for displaying system and hardware informations, it&rsquo;s not
+                a part of the shell but it&rsquo;s included in almost all linux distro, or you can install it from
+            </span><span class="c64"><a class="c39"
+                    href="https://www.google.com/url?q=https://github.com/dylanaraps/neofetch/wiki/Installation&amp;sa=D&amp;source=editors&amp;ust=1691097589138203&amp;usg=AOvVaw3flM78CDR4ULix7Nc9OWea">https://github.com/dylanaraps/neofetch/wiki/Installation</a></span>
+        </p>
+        <p class="c13"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 252.00px;"><img
+                    alt="" src="../asset/images/image41.png"
+                    style="width: 601.70px; height: 252.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c13 c7"><span class="c0"></span></p>
+        <p class="c13"><span class="c49 c8">NOTE: </span><span>almost all commands have a help option and a manual, you can
+                access the help by adding -h or &ndash;help that depend on command developer, to access the manual on how to
+                use the command use </span><span class="c9">man </span><span class="c33">command</span></p>
+        <h2 class="c46" id="h.g7rg6672gfdw"><span class="c28 c8"><br id="piping"><br><br>Piping</span></h2>
+        <p class="c14"><span class="c0">Sometimes, you want to use the output of a command as the input for other command,
+                and this is called piping</span></p>
+        <p class="c14"><span class="c0">For example if i have a file named animal.txt and i want to print its content but
+                it&rsquo;s a large file, you can pip the output of cat to the command less like this, so it print few lines
+                and when you enter it add some few other lines too:</span></p>
+        <p class="c13"><span class="c0">cat animals.txt | less</span></p>
+        <p class="c14"><span class="c0">Another example, if you are in a directory that has a lot of files and you want to
+                search for file containing the string &ldquo;dog&rdquo;, you just run:</span></p>
+        <p class="c13"><span class="c0">ls | grep &quot;dog&quot;</span></p>
+        <h2 class="c46" id="h.mokqec4jkm59"><span class="c28 c8"><br id="output_redirection"><br><br>Output redirection</span></h2>
+        <p class="c14"><span class="c0">Sometimes, you need to save the output of a command to a file, this is called output
+                redirection</span></p>
+        <p class="c13"><span class="c0">echo dog &gt; animals.txt #create or rewrite the file dir.txt to the string
+                &quot;dog&quot;</span></p>
+        <p class="c13"><span class="c0">echo dog &gt;&gt; animals.txt #create or append to the file dir.txt the string
+                &quot;dog&quot;</span></p>
+        <h2 class="c46" id="h.qy7rl1725ut9"><span class="c28 c8"><br id="running_multiple_commands_in_one_line"><br><br>Running multiple commands in one line</span></h2>
+        <p class="c1 c35"><span>You can run multiple commands separated by &ldquo;;&rdquo; in one time like
+                this:</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 186.67px;"><img
+                    alt="" src="../asset/images/image38.png"
+                    style="width: 601.70px; height: 186.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span>you can run whatever number of commands you want.</span></p>
+        <h2 class="c46" id="h.51tut1afev22"><span class="c28 c8"><br id="terminal_shortcut"><br><br>Terminal shortcut</span></h2>
+        <p class="c14"><span class="c0">Terminal shortcuts can be customized but most terminals come with default
+                shortcuts.</span></p>
+        <p class="c14"><span class="c20 c8">Navigation Shortcuts:</span></p>
+        <ul class="c5 lst-kix_5du66cviqpqf-0 start">
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + A</span><span class="c0">: Move the cursor to the beginning
+                    of the line.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + E</span><span class="c0">: Move the cursor to the end of the
+                    line.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + B</span><span>&nbsp;or </span><span class="c26">Left
+                    Arrow</span><span class="c0">: Move the cursor back one character.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + F</span><span>&nbsp;or </span><span class="c26">Right
+                    Arrow</span><span class="c0">: Move the cursor forward one character.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + P</span><span>&nbsp;or </span><span class="c26">Up
+                    Arrow</span><span class="c0">: Retrieve the previous command from history.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + N</span><span>&nbsp;or </span><span class="c26">Down
+                    Arrow</span><span class="c0">: Retrieve the next command from history.</span></li>
+        </ul>
+        <p class="c14"><span class="c20 c8">Text Manipulation Shortcuts:</span></p>
+        <ul class="c5 lst-kix_hvmlpny8dqio-0 start">
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + D</span><span class="c0">: Delete the character at the
+                    current cursor position.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + K</span><span class="c0">: Delete the text from the current
+                    cursor position to the end of the line.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + U</span><span class="c0">: Delete the text from the current
+                    cursor position to the beginning of the line.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + W</span><span class="c0">: Delete the word preceding the
+                    current cursor position.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + Y</span><span class="c0">: Paste (yank) the previously
+                    deleted text.</span></li>
+        </ul>
+        <p class="c14"><span class="c20 c8">Command History Shortcuts:</span></p>
+        <ul class="c5 lst-kix_4p84evupxdy2-0 start">
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + R</span><span class="c0">: Search backward through the
+                    command history for a specific command.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + G</span><span class="c0">: Escape from the history search
+                    mode initiated by Ctrl + R.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">!!</span><span class="c0">: Repeat the last command.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">!xyz</span><span class="c0">: Execute the most recent command
+                    starting with &quot;xyz&quot; from the command history.</span></li>
+        </ul>
+        <p class="c14"><span class="c20 c8">Terminal Control Shortcuts:</span></p>
+        <ul class="c5 lst-kix_aqf68ne0pvvy-0 start">
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + L</span><span class="c0">: Clear the terminal screen.</span>
+            </li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + C</span><span class="c0">: Interrupt (cancel) the currently
+                    running command.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + Z</span><span class="c0">: Suspend (pause) the currently
+                    running command and put it in the background.</span></li>
+            <li class="c4 li-bullet-0"><span class="c26">Ctrl + D</span><span class="c0">: Exit the current shell or close
+                    the terminal session.</span></li>
+        </ul>
+    </div>
+    
+    <div id="package_manager" class="tuto"><br><br><br>
+        <div class="title"><p class="c78 c35"><span class="c8 c38">Package Manager</span></p></div>
+        <p class="c13"><span class="c0">Linux, as an open-source operating system, offers a diverse ecosystem of
+                distributions tailored to meet various user needs and preferences. Each Linux distribution, or distro for
+                short, comes with its unique set of features, pre-installed software, and default package manager. </span>
+        </p>
+        <p class="c13"><span class="c21 c8">What is a package manager ?</span></p>
+        <p class="c13"><span>A </span><span class="c8">package manager</span><span>&nbsp;or </span><span
+                class="c8">package-management system</span><span class="c0">&nbsp;is a collection of software tools that
+                automates the process of installing, upgrading, configuring, and removing computer programs for a computer
+                in a consistent manner.</span></p>
+        <p class="c13"><span class="c21 c8">Why is Package Manager Important?</span></p>
+        <p class="c13"><span class="c0">Package manager has many benefits:</span></p>
+        <ol class="c5 lst-kix_xtuiqyjiajbr-0 start" start="1">
+            <li class="c13 c10 li-bullet-0"><span class="c0">make the installation of packages and software easy, users can
+                    easily search for packages, choose and install them, this eliminates the need to install these packages
+                    manually.</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">When installing a package or a software they need dependency to
+                    run, these dependencies can be a library, a framework or another package. When installing a software
+                    manually you also need to install his dependency and sometimes, you forget them. But when installing
+                    with a package manager it will automatically install the package dependency which saves time and
+                    effort.</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">With a package manager you can update your system with one or
+                    two commands or a few clicks.</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">uninstalling packages becomes easy with a package manager,
+                    instead of searching how to uninstall a package you just tell the package manager to do that.</span>
+            </li>
+        </ol>
+        <p class="c13"><span class="c21 c8">Linux distro and package manager</span></p>
+        <p class="c13"><span class="c0">There are many package manager, some of common used package manager are:</span></p>
+        <ul class="c5 lst-kix_ceil7n1z7nnh-0 start">
+            <li class="c13 c10 li-bullet-0"><span class="c0">apt: the default package manager in debian and debian-based
+                    distro like ubuntu.</span></li>
+            <li class="c13 c10 li-bullet-0"><span class="c0">pacman: the default package manager in arch and arch-based
+                    distro.</span></li>
+            <li class="c13 c10 li-bullet-0"><span>dnf</span><span class="c0">: the default package manager in fedora.</span>
+            </li>
+            <li class="c13 c10 li-bullet-0"><span>yum: the default package manager in centOS and fedora before
+                </span><span>dnf</span><span class="c0">.</span></li>
+        </ul>
+        <p class="c13"><span class="c21 c8">How to use package manager to search, install, uninstall packages</span></p>
+        <p class="c13"><span class="c0">Before installing or updating packages, it&#39;s a good idea to update the package
+                database first.Updating packages refers to synchronizing the local package database with the latest versions
+                available in the repositories. It allows you to see what updates are available for installed packages but
+                doesn&#39;t install those updates on your system. On the other hand, upgrading packages involves actually
+                installing the latest versions of the installed packages. It goes beyond updating the package database and
+                replaces the older versions with the newer ones, ensuring your system has the most up-to-date
+                software.</span></p>
+        <p class="c13"><span>NOTE: Most package managers need root privileges.</span></p>
+        <p class="c13"><span class="c28 c8">APT package manager:</span></p>
+        <hr>
+        <p class="c1 c7"><span class="c28 c8"></span></p>
+        <p class="c13 c7"><span class="c28 c8"></span></p>
+        <p class="c13"><span class="c20 c8">Search:</span></p>
+        <p class="c13"><span class="c0">To search for a package in apt, open a terminal and run: (be the root or use
+                sudo)</span></p><a id="t.f7f9677ef6cfc837e2465e758f89e0c120440acd"></a><a id="t.40"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt search expression</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 122.67px;"><img
+                    alt="" src="../asset/images/image52.png"
+                    style="width: 601.70px; height: 122.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c1"><span>you can also use regular expression</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 122.67px;"><img
+                    alt="" src="../asset/images/image12.png"
+                    style="width: 601.70px; height: 122.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Install:</span></p>
+        <p class="c1"><span class="c0">To install a package run</span></p><a
+            id="t.383fa00dcb1dfa34176f8acac3fcd129916a39e2"></a><a id="t.41"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt install package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span>package name is the name before &ldquo;/&rdquo; in this case there are two:
+            </span><span>dirsearch</span><span>&nbsp;and erlang-mimerl You can also specify the name of the repository so,
+                for example to install the </span><span>dirsearch</span><span class="c0">&nbsp;package you can use:</span>
+        </p><a id="t.4f15e52e2fb085c9c4077d769dc6b016593e9ff3"></a><a id="t.42"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt install </span><span class="c9">dirsearch</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">or</span></p><a id="t.785637f63f7282c7f6c0437ccc959ed6a038fd66"></a><a id="t.43"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt install dirsearch/kali-rolling </span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">Both of them work.</span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Uninstall:</span></p>
+        <p class="c1"><span class="c0">To uninstall a package run</span></p><a
+            id="t.dfefafd9eb69319a8ac2aafaf94997f0120ab63c"></a><a id="t.44"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt remove package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">show package details:</span></p><a
+            id="t.ea5b82b823c24bf93b899bf023a879a1e27cf8f4"></a><a id="t.45"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt show package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">list packages based on package names:</span></p><a
+            id="t.ce0ecdb84e2f66fde0a249c794f4f03c13dd7311"></a><a id="t.46"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt list package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c8">reinstall</span><span class="c20 c8">&nbsp;packages:</span></p><a
+            id="t.8edaaa28297b177d71c67d987586d119c5fd495c"></a><a id="t.47"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt reinstall package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">automatically remove all unused packages:</span></p><a
+            id="t.8b3ef6c1edbb33955d942092dd1bf306e7d91ff4"></a><a id="t.48"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt autoremove</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Update the package lists for available software packages:</span></p>
+        <p class="c1"><span class="c0">When you run </span></p><a id="t.ff13e3ff0949a67f0484d84175659a7256e69fe2"></a><a
+            id="t.49"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt update</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">The package management system retrieves the latest information about available
+                packages from the software repositories configured on your system. It downloads the updated lists of
+                packages and their versions without actually installing or upgrading any packages.</span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Upgrade installed packages to their latest versions:</span></p><a
+            id="t.0e96b7674c4d36b84b40065bee1d32ecf915c40b"></a><a id="t.50"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">apt upgrade</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">The package management system checks for newer versions of the installed packages
+                available in the repositories. It then downloads and installs the updated packages, effectively upgrading
+                them to the latest versions.</span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c28 c8">Pacman package manager</span></p>
+        <hr>
+        <p class="c1 c7"><span class="c28 c8"></span></p>
+        <p class="c1 c7"><span class="c28 c8"></span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Search:</span></p>
+        <p class="c1"><span class="c0">To search for a package in pacman run:</span></p><a
+            id="t.fc1f9cb9f1275a9b120eacb956143f11632780df"></a><a id="t.51"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">pacman -Ss search_term</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Install or reinstall:</span></p>
+        <p class="c1"><span class="c0">To install or reinstall a package run:</span></p><a
+            id="t.e603c7efdbb6a8f0c7dcd1100974f7efdc719c64"></a><a id="t.52"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">pacman -S package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Uninstall:</span></p><a id="t.b8f7b0a7f45d535754167405955b23f3988b3277"></a><a
+            id="t.53"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">pacman -R package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Show package details:</span></p><a
+            id="t.2e48daebd80a1fdb2023450e143b0c88f25ab7c1"></a><a id="t.54"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">pacman -Qi package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Update package repo:</span></p><a
+            id="t.703aa7af361448e81aa7123e7eaf11a679f64d6b"></a><a id="t.55"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">pacman -Syy</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Upgrade packages:</span></p><a
+            id="t.db3481a3f7f59977e124c6b45f3d4e405a465468"></a><a id="t.56"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">pacman -Syu</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Dnf package manager</span></p>
+        <hr>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Search:</span></p><a id="t.9a94a0f9f84fd9af260fb19c32b46185a8e003b1"></a><a
+            id="t.57"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">dnf</span><span class="c9">&nbsp;search package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Install:</span></p><a id="t.e4de60b63400a1b2f57f2747c2263099ae0dba72"></a><a
+            id="t.58"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">dnf</span><span class="c9">&nbsp;install package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Reinstall:</span></p><a id="t.fab4448e06f709e9f2ed264750c0c811dc76a898"></a><a
+            id="t.59"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">dnf</span><span class="c9">&nbsp;reinstall package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Uninstall:</span></p><a id="t.ec6a051481b2d01e693696ebb1669c33fb900f2a"></a><a
+            id="t.60"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">dnf</span><span class="c9">&nbsp;remove package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Show package details:</span></p><a
+            id="t.ebf37320e3f296204fbe0345c592aba4dcaa5a16"></a><a id="t.61"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">dnf</span><span class="c9">&nbsp;info package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Upgrade:</span></p>
+        <p class="c1"><span class="c0">When you run this command</span></p><a
+            id="t.d78660fcdd8fcdc40bf862a2af678769ca292dc0"></a><a id="t.62"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">dnf upgrade</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span>dnf</span><span class="c0">&nbsp;will automatically update its repo before upgrading.</span></p>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c28 c8">Yum package manager</span></p>
+        <hr>
+        <p class="c1 c7"><span class="c28 c8"></span></p>
+        <p class="c1 c7"><span class="c28 c8"></span></p>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Search:</span></p><a id="t.6d45013a24790c27ee87e3e0ef2d1aa6a9133683"></a><a
+            id="t.63"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">yum search package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Install:</span></p><a id="t.f51301ae52921673b3c71c596402392bdb238ce9"></a><a
+            id="t.64"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">yum install package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Reinstall:</span></p><a id="t.f2143cca046c7c504e2a370b9c63e873b099bc9a"></a><a
+            id="t.65"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">yum reinstall package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Uninstall:</span></p><a id="t.858286ad835a3df633c573b10e21fd462353004e"></a><a
+            id="t.66"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">yum remove package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">Show package details:</span></p><a
+            id="t.d9a4fa5dbca9562f65fd37eca8349611c6eaed3c"></a><a id="t.67"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">yum info package_name</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c20 c8">automatically remove all unused packages:</span></p><a
+            id="t.b32cc1a5d129b86c00aba11302376658eb48d534"></a><a id="t.68"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">yum autoremove</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c20 c8"></span></p>
+        <p class="c1"><span class="c20 c8">Update all your packages:</span></p><a
+            id="t.f049be6a8cb3e7307746493baa389ed711ad334d"></a><a id="t.69"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">yum update</span></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="bash_scripting" class="tuto"><br><br><br>
+        <div class="title"><p class="c78 c35"><span class="c8 c38">bash scripting</span></p>
+        <p class="c86 c35 c30"><span class="c8 c93">&ldquo;the only way to really learn scripting is to write scripts&rdquo;</span></p></div>
+        <p class="c1"><span class="c0">Bash scripting is the process of creating bash scripts which are normal text files
+                executed by bash, these files contain bash commands.</span></p>
+        <p class="c1"><span class="c0">Bash scripting is a fast and easy way to automate tasks, which saves time and
+                effort.</span></p>
+        <p class="c57"><span class="c0">Although bash scripting is considered a programming language, this chapter does not
+                encompass every aspect of it. However, it does focus on the fundamental elements necessary for constructing
+                effective scripts.</span></p>
+        <p class="c1"><span>To create a bash script, you only need to create a file and open it with a text editor then
+                writing bash commands there which will be executed one by one. For example, I will create a file called
+                &ldquo;script.sh&rdquo;, a </span><span>bash</span><span class="c0">&nbsp;script file usually has the
+                extension &ldquo;.sh&rdquo; but you can ignore it or use another one.</span></p>
+        <ol class="c5 lst-kix_3nei86dldgwg-0 start" start="1">
+            <li class="c1 c10 li-bullet-0"><span class="c0">To create an empty file, open a terminal and run:</span></li>
+        </ol><a id="t.283e89ade1f29766991fa1f9b88248ae66c22887"></a><a id="t.70"></a>
+        <table class="c72">
+            <tr class="c36">
+                <td class="c24" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">touch script.sh</span></p>
+                </td>
+            </tr>
+        </table>
+        <ol class="c5 lst-kix_3nei86dldgwg-0" start="2">
+            <li class="c1 c10 li-bullet-0"><span>Then open it with a text editor like nano or mousepad (prefer
+                </span><span>mousepad</span><span>&nbsp;since it has </span><span>gui</span><span class="c0">):</span></li>
+        </ol><a id="t.a677ede9814729a0fd81ec42a9ae162d8d13d379"></a><a id="t.71"></a>
+        <table class="c85">
+            <tr class="c91">
+                <td class="c62" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">mousepad script.sh</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1 c30"><span>a window like this will open:</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 254.67px;"><img
+                    alt="" src="../asset/images/image65.png"
+                    style="width: 601.70px; height: 254.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <ol class="c5 lst-kix_3nei86dldgwg-0" start="3">
+            <li class="c1 c10 li-bullet-0"><span>now write some bash commands separated by a line or a semicolon
+                    &ldquo;;&rdquo;, for example</span><br><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 258.67px;"><img
+                        alt="" src="../asset/images/image57.png"
+                        style="width: 601.70px; height: 258.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span><br><span>this script will run the commands: </span><span class="c33">echo</span><span
+                    class="c9">&nbsp;</span><span class="c40">&quot;linux&quot;</span><span>&nbsp;and </span><span
+                    class="c9">ls</span></li>
+            <li class="c1 c10 li-bullet-0"><span class="c0">To run the script use the command bash like this:</span></li>
+        </ol><a id="t.d6cba3e648ec0a190d31df8ea4eccbf67041918b"></a><a id="t.72"></a>
+        <table class="c72">
+            <tr class="c36">
+                <td class="c50" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">bash script.</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c30"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 62.67px;"><img
+                    alt="" src="../asset/images/image64.png"
+                    style="width: 601.70px; height: 62.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span><br><span>The command </span><span class="c33">echo</span><span
+                class="c9">&nbsp;</span><span class="c40">&quot;linux&quot;</span><span>&nbsp;print linux and the command
+            </span><span class="c9">ls -a</span><span class="c0">&nbsp;list all files which are the script file and the
+                &ldquo;.&rdquo; directory which is the current directory and the &ldquo;..&rdquo; directory which is the
+                mother directory of the current directory.</span></p>
+        <p class="c1 c7 c30"><span class="c0"></span></p>
+        <p class="c1"><span class="c21 c8">Functions</span></p>
+        <p class="c1"><span class="c0">A function is a block of code (one or more lines of code) that can be used multiple
+                times by only calling the function by its name, this makes the code shorter and easier to understand.</span>
+        </p>
+        <p class="c1"><span class="c0">Here is an example of a function in bash</span></p><a
+            id="t.5905172a44a75bd13d926ffa3baa2342bf9c478d"></a><a id="t.73"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c43 c42">#creating a function named greet</span><span
+                            class="c9"><br></span><span class="c33">greet</span><span class="c9">() {<br> &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c33">echo</span><span
+                            class="c9">&nbsp;hello<br>} &nbsp; &nbsp;<br></span><span class="c42 c43">#calling the
+                            function</span><span class="c9"><br>greet</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">In bash, you can write a comment by using the # sign before the comment. A comment is
+                text created by the programmer to explain something for those who read the code, and it&rsquo;s not readed
+                by the programming language like bash.</span></p>
+        <p class="c1"><span>In the previous code we have created a function named &ldquo;greet&rdquo; by using the
+                syntax</span><span class="c9">&nbsp;greet()</span><span class="c0">&nbsp;the brackets &ldquo;{&ldquo; and
+                &ldquo;}&rdquo; determine the code block of the function, in this case it&rsquo;s one command &ldquo;echo
+                hello&rdquo;.</span></p>
+        <p class="c1"><span>To execute the code block of a function we call the function by only typing its name like in the
+                previous code </span><span class="c9">greet</span></p>
+        <p class="c1 c7"><span class="c21 c8"></span></p>
+        <p class="c1"><span class="c53 c8">Variables and constant</span><span class="c20 c8">&nbsp;</span></p>
+        <p class="c1"><span class="c0">Imagine variables as boxes, each box has something inside which is called variable
+                value, and each box has a name which is called variable name. Variables are like containers used to store
+                multiple types of data, and to use the data you need to use the variable name.</span></p>
+        <p class="c1"><span class="c0">The difference between variables and constants is that you can change the value of a
+                variable during the script execution but not of a constant.</span></p>
+        <p class="c1"><span class="c0">Let&rsquo;s get a look on how to use variables:</span></p>
+        <p class="c1"><span class="c0">for example you have this script</span></p><a
+            id="t.91bbb72b7d8a487f73c9a555e43aa83aaf9dd385"></a><a id="t.74"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c9">var=</span><span class="c40">&quot;hi&quot;</span><span
+                            class="c9">&nbsp;</span><span class="c43 c42">#creating a variable named &#39;var&#39; with the
+                            value &#39;hi&#39;</span><span class="c9"><br></span><span class="c33">greet</span><span
+                            class="c9">() { </span><span class="c43 c42">#creating a function that print the &#39;var&#39;
+                            variable value</span><span class="c9"><br></span><span class="c33">echo</span><span
+                            class="c9">&nbsp;</span><span class="c40">&quot;</span><span class="c42 c59">$var</span><span
+                            class="c40">&quot;</span><span class="c9"><br>}<br>greet </span><span class="c43 c42">#calling
+                            the function</span><span class="c9"><br>var=</span><span
+                            class="c40">&quot;hello&quot;</span><span class="c9">&nbsp;</span><span class="c43 c42">#change
+                            the value of the &#39;var&#39; variable</span><span class="c9"><br>greet </span><span
+                            class="c43 c42">#calling the function again</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span class="c0">In this script we have created a variable named &lsquo;var&rsquo; and assigned the
+                value &lsquo;hi&rsquo; to it, then we created a function that print the variable value and we call it, so it
+                print &lsquo;hi&rsquo;, after that, we changed the variable value to &lsquo;hello&rsquo; and called the
+                function again and it printed hello.</span></p>
+        <p class="c1"><span class="c0">result:</span></p>
+        <p class="c1"><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 595.00px; height: 81.00px;"><img
+                    alt="" src="../asset/images/image32.png"
+                    style="width: 595.00px; height: 81.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c1"><span class="c0">Sometimes, you need to store the output of a command to a variable, you can do it
+                like this:</span></p>
+        <p class="c1"><span class="c0">variable=$(command)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+        <p class="c1"><span class="c0">example :</span></p>
+        <p class="c60"><span class="c0"># Execute a command and store the output in a variable</span></p>
+        <p class="c1"><span class="c0">output=$(ls -a -l)</span></p>
+        <p class="c1"><span class="c0"># Print the stored output</span></p>
+        <p class="c1"><span class="c0">echo -e &quot;The output of the command is:\n $output&quot;</span></p>
+        <p class="c1"><span>result :</span><br><span
+                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 100.00px;"><img
+                    alt="" src="../asset/images/image27.png"
+                    style="width: 601.70px; height: 100.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></span></p>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c21 c8">Conditional statements</span></p>
+        <p class="c1"><span>In Bash, you can use conditional statements to make decisions and execute different blocks of
+                code based on certain conditions. The two main types of conditional statements in Bash are the </span><span
+                class="c81 c8">if-else</span><span>&nbsp;statement and the </span><span class="c81 c8">case</span><span
+                class="c0">&nbsp;statement.</span></p>
+        <p class="c1"><span class="c28 c8">If-else statement</span></p>
+        <p class="c1"><span class="c0">To create an if-else statement you can use this syntax:</span></p>
+        <p class="c1 c7"><span class="c0"></span></p><a id="t.845563257774ee2ce48c0682eebe54b4e1336b3e"></a><a
+            id="t.75"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c51 c42">if</span><span class="c9">&nbsp;[ condition1 ]; </span><span
+                            class="c51 c42">then</span><span
+                            class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                            class="c43 c42">#code block to execute if condition1 is true else check condition2</span><span
+                            class="c9"><br></span><span class="c51 c42">elif</span><span class="c9">&nbsp;[ condition2 ];
+                        </span><span class="c51 c42">then</span><span
+                            class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                            class="c43 c42">#code block to execute if </span><span class="c43 c42">condition2</span><span
+                            class="c43 c42">&nbsp;is true</span><span
+                            class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42">#you
+                            can add more &#39;elif&#39; if you want or you can use only if or only if and else, that depends
+                            on yours needs</span><span class="c9"><br></span><span class="c51 c42">else</span><span
+                            class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                            class="c43 c42">#code block to execute if all conditions is false</span><span
+                            class="c9"><br></span><span class="c70 c51 c42">fi</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1"><span>example of if-else statement</span></p><a id="t.9a5943e73029e689085ee18885f7714563951955"></a><a
+            id="t.76"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c43 c42"># Prompt the user to enter a number</span><span
+                            class="c9"><br></span><span class="c33">echo</span><span class="c9">&nbsp;-n </span><span
+                            class="c40">&quot;enter a number: &quot;</span><span class="c9"><br></span><span
+                            class="c33">read</span><span class="c9">&nbsp;number<br><br></span><span class="c43 c42"># say
+                            if the number is positive or negative</span><span class="c9"><br></span><span
+                            class="c51 c42">if</span><span class="c9">&nbsp;[ </span><span
+                            class="c59 c42">$number</span><span class="c9">&nbsp;-gt 0 ]; </span><span
+                            class="c51 c42">then</span><span class="c9"><br> &nbsp; &nbsp;</span><span
+                            class="c33">echo</span><span class="c9">&nbsp;the number is positive<br></span><span
+                            class="c51 c42">else</span><span class="c9"><br> &nbsp; &nbsp;</span><span
+                            class="c33">echo</span><span class="c9">&nbsp;the number is negative<br></span><span
+                            class="c51 c42">fi</span></p>
+                </td>
+            </tr>
+        </table>
+        <ul class="c5 lst-kix_p3e3dwvzjh6w-0 start">
+            <li class="c22 c10 li-bullet-0"><span class="c26">if</span><span>&nbsp;is used to conditionally execute a block
+                    of code based on a specified condition. If the condition is true, the code within the </span><span
+                    class="c26">if</span><span class="c0">&nbsp;block is executed.</span></li>
+            <li class="c22 c10 li-bullet-0"><span class="c26">elif</span><span>&nbsp;(short for &quot;else if&quot;) is used
+                    to check an additional condition if the previous </span><span class="c26">if </span><span>or</span><span
+                    class="c26">&nbsp;elif</span><span>&nbsp;statement&#39;s condition is false. If the </span><span
+                    class="c26">elif</span><span>&nbsp;condition is true, the code within the </span><span
+                    class="c26">elif</span><span class="c0">&nbsp;block is executed.</span></li>
+            <li class="c22 c10 li-bullet-0"><span class="c26">else</span><span>&nbsp;is used as a fallback option if all
+                    preceding conditions (i.e., the </span><span class="c26">if</span><span>&nbsp;and </span><span
+                    class="c26">elif</span><span>&nbsp;conditions) are false. The code within the </span><span
+                    class="c26">else</span><span class="c0">&nbsp;block is executed in this case.</span></li>
+        </ul>
+        <p class="c1"><span>the condition </span><span class="c59 c42">$number</span><span class="c9">&nbsp;-gt
+                0</span><span>&nbsp;returns true if the variable value of the variable $number is greater than 0 by using
+                the </span><span class="c9">-gt</span><span class="c0">&nbsp;conditional operators. Others conditional
+                operators are:</span></p>
+        <p class="c1 c7"><span class="c0"></span></p><a id="t.6a4b24064d2b1679b13bc838bc976e6ad9640a82"></a><a
+            id="t.77"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c8">Operator</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c8">Description</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">-eq</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Returns true if two numbers are equivalent</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">-lt</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Returns true if a number is less than another number</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">-gt</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Returns true if a number is greater than another number</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">==</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Returns true if two strings are equivalent</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">!=</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Returns true if two strings are not equivalent</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c56"><span class="c0">!</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Returns true if the expression is false</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c56"><span class="c0">-d</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Check the existence of a directory</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c56"><span class="c0">-e</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Check the existence of a file</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c56"><span class="c0">-r</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Check the existence of a file and read permission</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c56"><span class="c0">-w</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Check the existence of a file and write permission</span></p>
+                </td>
+            </tr>
+            <tr class="c36">
+                <td class="c41" colspan="1" rowspan="1">
+                    <p class="c56"><span class="c0">-x</span></p>
+                </td>
+                <td class="c16" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c0">Check the existence of a file and execute permission</span></p>
+                </td>
+            </tr>
+        </table>
+        <p class="c1 c7"><span class="c0"></span></p>
+        <p class="c1"><span class="c28 c8">Case statement</span></p>
+        <p class="c77"><span>Case statements in Bash are used as a form of conditional branching when you have multiple
+                possible conditions to check against a single variable or expression. They provide an alternative to using
+                multiple </span><span class="c26">if</span><span class="c0">&nbsp;statements with multiple
+                conditions.</span></p>
+        <p class="c1"><span class="c0">Here&#39;s a simple example to demonstrate the usage of case statements in
+                Bash:</span></p><a id="t.9ca64ef0a09c364d7cc98dfd76c82f98b69a91e6"></a><a id="t.78"></a>
+        <table class="c2">
+            <tr class="c36">
+                <td class="c12" colspan="1" rowspan="1">
+                    <p class="c1"><span class="c51 c42">case</span><span class="c9">&nbsp;</span><span
+                            class="c40">&quot;</span><span class="c59 c42">$variable</span><span
+                            class="c40">&quot;</span><span class="c9">&nbsp;</span><span class="c42 c51">in</span><span
+                            class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern1)<br> &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code to
+                            execute if variable matches pattern1</span><span class="c9"><br> &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern2)<br>
+                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code
+                            to execute if variable matches pattern2</span><span class="c9"><br> &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern3|pattern4)<br>
+                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code
+                            to execute if variable matches pattern3 or pattern4</span><span class="c9"><br> &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)<br>
+                            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code
+                            to execute if variable doesn&#39;t match any patterns</span><span class="c9"><br> &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br></span><span
+                            class="c51 c42">esac</span></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+  
+    <div id="conclusion" class="tuto"><br><br><br>
+        <div class="title"><p class="c78 c35"><span class="c8 c38">CONCLUSION</span></p></div>
+        <p class="c75"><span class="c0">This book has provided a comprehensive overview of Linux, covering various essential
+                topics for beginners. Starting with an introduction to Linux, readers were introduced to the concept and its
+                significance in the world of computing.</span></p>
+        <p class="c75"><span class="c0">The book then delved into the practical aspects of Linux installation, providing
+                step-by-step instructions for installing Linux on different platforms. From installing VirtualBox in Windows
+                and macOS to setting up Linux within VirtualBox, readers gained the necessary knowledge to create a virtual
+                Linux environment for experimentation and learning. Furthermore, the book also covered the process of
+                installing Linux directly on a computer, offering readers flexibility in choosing their preferred
+                installation method.</span></p>
+        <p class="c75"><span class="c0">Understanding the Linux file system structure was a crucial aspect covered in this
+                book. Readers were introduced to the hierarchical organization of files and directories, empowering them to
+                navigate and manage their files effectively. User and group management were also explored, allowing readers
+                to comprehend the concept of user accounts and their associated permissions.</span></p>
+        <p class="c75"><span class="c0">File permissions were thoroughly explained, enabling readers to control access to
+                files and directories, ensuring the security and integrity of their systems. Additionally, the book
+                introduced readers to the command-line interface, equipping them with essential skills to interact with
+                Linux using text-based commands. Help resources within the command-line interface were explored, guiding
+                readers on how to seek assistance and find relevant information when needed.</span></p>
+        <p class="c75"><span class="c0">The book also touched upon the package manager, demonstrating its importance in
+                managing software installations, updates, and dependencies. Finally, readers were introduced to the world of
+                shell scripting, where they learned the fundamentals of automating tasks and creating custom scripts to
+                streamline their workflow.</span></p>
+        <p class="c75"><span class="c0">Overall, this book has provided readers with a solid foundation in Linux, empowering
+                them to confidently navigate, configure, and utilize this powerful operating system. With the knowledge
+                gained from this book, readers are well-equipped to embark on their Linux journey, whether for personal or
+                professional purposes.</span></p>
+        <p class="c75"><span>Now, after you </span><span>learned</span><span>&nbsp;all of these branches, you can feel and
+            </span><span class="c73 c8 c76 c84">unleash the power of linux.</span></p>
+        <p class="c77 c7"><span class="c20 c8"></span></p>
+        <p class="c77"><span>If you liked this book don&rsquo;t forget to share it with the word, </span><span
+                class="c64"><a class="c39"
+                    href="https://www.google.com/url?q=https://twitter.com/intent/tweet?text%3D%25F0%259F%2593%259A%2520Just%2520finished%2520reading%2520%2527Unleash%2520the%2520power%2520of%2520linux%253A%2520all%2520you%2520need%2520to%2520learn%2520about%2520linux%2527%25E2%2580%2594a%2520book%2520that%2520demystifies%2520the%2520way%2520to%2520feel%2520and%2520unleash%2520the%2520power%2520of%2520linux.%2520This%2520book%2520deserves%2520it%2520all%2521%2520since%2520no%2520prior%2520knowledge%2520is%2520assumed.%250Aget%2520it%2520from%2520https://payhip.com/b/2bFRK&amp;sa=D&amp;source=editors&amp;ust=1691097589192425&amp;usg=AOvVaw2VNqUxjC1R5sfa94Kralyh">click
+                    to tweet this book</a></span></p>
+        <div>
+            <p class="c35 c7 c44"><span class="c0"></span></p>
+        </div>
+    </div>
+    
 </body>
+
+
+    </article>
+    
+    <script src="script.js"></script>
+    <script src="../script.js"></script>
+</body>
+<foot style="position: relative;">
+    <br><br><br><br><br>
+    <div style="position: absolute;top: 150px;left: 50vw;display: flex;flex-direction: row;width: 50vw;">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=393c3c07-d82e-48a5-bfd9-e86199c2aaa9" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=393c3c07-d82e-48a5-bfd9-e86199c2aaa9"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+        <p style="padding-left: 5px;"> © 2023 Aimed Guendouz</p>
+    </div>
+</foot>
 </html>

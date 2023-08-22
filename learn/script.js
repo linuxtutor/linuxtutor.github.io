@@ -1,31 +1,69 @@
-var score = 0
-var div = 1
-
-function quiz(elm) {
-    cls = elm.className
-
-    if (cls == "a") {
-        elm.style.backgroundColor="#3aafa9";
-        score++;
-    } else {
-        elm.style.backgroundColor="red";
+document.getElementById('introduction').style.display="block";
+window.location.href="#introduction";
+var previous_tuto = "introduction";
+var list = 
+    ["#introduction", 
+    "#introduction_to_linux",
+    /*"#what_is_linux", 
+    "#advantages_of_using_linux", 
+    "#disadvantages_of_using_linux", 
+    "#who_uses_linux_and_where", */
+    "#linux_installation",
+    /*"#what_is_virtualbox", 
+    "#install_virtualbox_in_windows", 
+    "#install_virtualbox_in_macos", 
+    "#install_ubuntu_in_virtualbox", 
+    "#install_ubuntu_on_a_computer", */
+    "#linux_filesystem_structure", 
+    "#user_and_group_management", 
+    "#file_permissions", 
+    "#command_line_interface", 
+    /*"#what_is_a_shell", 
+    "#what_is_the_terminal", 
+    "#which_shell_is_the_default_in_my_linux_distro", 
+    "#which_shell_should_I_use", 
+    "#use_terminal_to_do_tasks", 
+    "#text_manipulations", 
+    "#files_and_directories_manipulations", 
+    "#system", 
+    "#hardware_and_system", 
+    "#piping", 
+    "#output_redirection", 
+    "#running_multiple_commands_in_one_line", 
+    "#terminal_shortcut", */
+    "#package_manager", 
+    "#bash_scripting", 
+    "#conclusion"];
+var listN = 0;
+function display(tuto) {
+    if (previous_tuto != "0") {
+        document.getElementById(previous_tuto).style.display="none";
     }
-    if (div != 20) {
-        next();
-    } else {
-        showresult();
-    }
+    document.getElementById(tuto).style.display="block";
+    previous_tuto = tuto;
+}
+
+
+function previous() {
+    var tuto = list[list.indexOf("#" + previous_tuto) - 1];
+    display(tuto.slice(1));
+    window.location.href = tuto;
 }
 
 function next() {
-    document.getElementById(String(div)).style.display="none";
-    div++;
-    document.getElementById(String(div)).style.display="block";
-    document.getElementById("quizN").innerHTML=div
+    var tuto = list[list.indexOf("#" + previous_tuto) + 1];
+    display(tuto.slice(1));
+    window.location.href = tuto;
 }
 
-function showresult() {
-    for (var i = 0; i < 20; i++) {
-        document.querySelectorAll("#quiz div")[i].style.display="block";
+var ct = 0;
+function content_table() {
+    if (ct == 0 ) {
+        document.getElementById("content_table").style.display="flex";
+        document.getElementById("content_table").style.paddingTop="40px";
+        ct = 1;
+    } else {
+        document.getElementById("content_table").style.display="none";
+        ct = 0;
     }
 }
