@@ -66,6 +66,9 @@ body {
   cursor: pointer;
 }
 
+h2 {
+  width: 800px;
+}
 /***************** body ***/
 #title {
   display: block;
@@ -78,6 +81,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  text-align: center;
 }
 #search-con input {
   font-size: 17px;
