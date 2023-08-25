@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6651390937843009"
+     crossorigin="anonymous"></script>
+     
+    <link rel="icon" type="icon" href="/favicon.ico">
+  <title>Linuxtutor | Learn - linux filesystem structure</title>
+  <meta name="description" content="Linuxtutor is the easy way to learn Linux, with step-by-step tutorials and clear explanations.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2LH0J10GHP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2LH0J10GHP');
+    </script>
+    <meta name="description" content="How to learn linux? Learn linux commands? Here you can unleash the power of linux and master the art of command-line with step-by-step tutorial and without any previuos knowledge assumed.">
+    <title>Linuxtutor | Linux made simple.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+        <nav id="nav">
+                <div style="display: flex;flex-direction: row;align-items: center;">
+                    <img id="logo" onclick="window.location.href='https://linuxtutor.github.io'" src="../asset/logo.png">
+        
+                </div>
+                <div id="btn">
+                    <button onclick="previous()"><span class="material-symbols-outlined">
+                        chevron_left
+                        </span><span class="btn">previous</span></button>   
+                    <button onclick="next()"><span class="btn">next</span><span class="material-symbols-outlined">
+                        chevron_right
+                        </span></button>
+                </div>
+                <a class="lesson" href="/learn">
+                    <p>Learn</p>
+                </a>
+                <a class="lesson" href="/quiz">
+                    <p>Quiz</p>
+                </a>
+                <a class="lesson" href="/contact">
+                    <p>Contact us</p>
+                </a>
+                <span onclick="menu()" class="material-symbols-outlined menu">menu</span>
+            </nav>
+            <div id="hr"></div>
+            <!--menu-->
+            <div id="menu">
+                <a class="lesson" href="/learn">
+                    <p>Learn</p>
+                </a>
+                <a class="lesson" href="/quiz">
+                    <p>Quiz</p>
+                </a>
+                <a class="lesson" href="/contact">
+                    <p>Contact us</p>
+                </a>
+            </div>
+            <article id="content_table">
+                <a href="index.html"><b>introduction</b></a>
+                <a href="introduction_to_linux.html"><b>introduction to linux</b></a>
+                <ul>  
+                    <li><a href="introduction_to_linux.html#what_is_linux">what is Linux ?</a></li>
+                    <li><a href="introduction_to_linux.html#advantages_of_using_linux">Advantages of using Linux</a></li>
+                    <li><a href="introduction_to_linux.html#disadvantages_of_using_linux">Disadvantages of using Linux</a></li>
+                    <li><a href="introduction_to_linux.html#who_uses_linux_and_where">Who uses Linux and where</a></li>
+                </ul>
+                <a href="linux_installation.html"><b>linux installation</b></a>
+                <ul>
+                    <li><a href="linux_installation.html#what_is_virtualbox">what is virtualbox</a></li>
+                    <li><a href="linux_installation.html#install_virtualbox_in_windows">install virtualbox in Windows</a></li>
+                    <li><a href="linux_installation.html#install_virtualbox_in_macos">install virtualbox in MacOS</a></li>
+                    <li><a href="linux_installation.html#install_ubuntu_in_virtualbox">install ubuntu in virtualbox</a></li>
+                    <li><a href="linux_installation.html#install_ubuntu_on_a_computer">install ubuntu on a computer</a></li>
+                </ul>
+                <a href="linux_filesystem_structure.html"><b>linux filesystem structure</b></a>
+                <a href="user_and_group_management.html"><b>user and group management</b></a>
+                <a href="file_permissions.html"><b>file permission</b></a>
+                <a href="command_line_interface.html"><b>command line interface</b></a>
+                <ul>
+                    <li><a href="command_line_interface.html#what_is_a_shell">what is a shell</a>
+                    <li><a href="command_line_interface.html#what_is_the_terminal">what is the terminal</a>
+                    <li><a href="command_line_interface.html#which_shell_is_the_default_in_my_linux_distro">Which shell is the default in my linux distro ?</span> </a>
+                    <li><a href="command_line_interface.html#which_shell_should_I_use">Which shell should I use ?</a>
+                    <li><a href="command_line_interface.html#use_terminal_to_do_tasks">Use terminal to do tasks</a> 
+                    <ul>
+                        <li><a href="command_line_interface.html#text_manipulations">TEXT MANIPULATIONS</a>
+                        <li><a href="command_line_interface.html#files_and_directories_manipulations">FILES AND DIRECTORIES MANIPULATIONS</a>
+                        <li><a href="command_line_interface.html#system">SYSTEM</a>
+                        <li><a href="command_line_interface.html#hardware_and_system">HARDWARE AND SYSTEM</a>
+                        <li><a href="command_line_interface.html#piping">Piping</a>
+                        <li><a href="command_line_interface.html#output_redirection">Output redirection</a>
+                        <li><a href="command_line_interface.html#running_multiple_commands_in_one_line">Running multiple commands in one line</a>
+                        <li><a href="command_line_interface.html#terminal_shortcut">Terminal shortcut</a>
+        
+                    </ul>
+                </ul>
+                <a href="package_manager.html"><b>package manager</b></a>
+                <a href="bash_scripting.html"><b>bash scripting</b></a>
+                <a href="conclusion.html"><b>conclusion</b></a>
+            </article>
+            <span class="material-symbols-outlined list" onclick="content_table()">
+                list
+            </span>
+            <article id="content">
+    <div id="linux_filesystem_structure" class="tuto"><br><br><br>
+        <div class="title">
+            <h1><p class="c78 c35"><span class="c8 c38">Linux filesystem structure</span></p></h1>
+        </div>
+        <p class="c23"><span class="c0">Think of your computer as a big tree, and the Linux filesystem is like the branches
+                and leaves of that tree. Each part of the tree has a special purpose and holds different things.</span></p>
+        <p class="c14 c35"><span class="c0">At the very bottom of the tree is the root, represented by &quot;/&quot;. Just
+                like the roots of a tree, the root of the Linux filesystem is where everything starts. It is the main folder
+                that holds all other folders and files.</span></p>
+        <p class="c14 c35"><span class="c0">Now, let&#39;s look at some important branches of our Linux tree:</span></p>
+        <ol class="c5 lst-kix_fph4kzufq0po-0 start" start="1">
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/bin</span><span class="c0">&nbsp;(Binaries): This branch
+                    holds special files called &quot;binaries&quot; that make the computer do specific tasks. Binaries are
+                    like tools that help the computer run different programs and perform actions. if you created a program
+                    that do a specific task you can move it to the /bin directory so you can execute it from terminal with
+                    just typing its name</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/etc</span><span class="c0">&nbsp;(Etcetera): This branch
+                    has important files that control how the computer works. It keeps settings and configurations for
+                    various programs and system functions.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/var</span><span class="c0">&nbsp;(Variable): This branch
+                    holds files that can change or vary as we use the computer. For example, it keeps files related to
+                    ongoing tasks, temporary data, and system logs.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/usr</span><span class="c0">&nbsp;(User): This branch is
+                    like a big folder for all the extra things we install on the computer. It holds programs, libraries, and
+                    other files that users can use.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/boot </span><span class="c0">(Boot): This branch contains
+                    special files that help the computer start up when you turn it on. It&#39;s like the roots of the tree
+                    that support the computer&#39;s initial start.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/dev</span><span class="c0">&nbsp;(Devices): This branch
+                    represents all the devices connected to the computer, such as the keyboard, mouse, or printer. It&#39;s
+                    like the branches where different devices grow and connect to the tree.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/home</span><span class="c0">&nbsp;(Home): This branch is
+                    like a special place for each person who uses the computer. It has separate branches for each user,
+                    where they can store their files, pictures, and personal things.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/lib</span><span class="c0">&nbsp;(Library): This branch
+                    holds important files called libraries that other programs need to work correctly. Think of libraries as
+                    books that programs can borrow to do their tasks effectively.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/lib32</span><span class="c0">, /lib64, /libx32: These
+                    branches are like special library sections for different types of computers. They hold the right books
+                    (libraries) that programs need to run on different computer types.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/lost+found</span><span class="c0">&nbsp;(Lost and Found):
+                    This branch is like a special area where the computer puts files that it found in unexpected places or
+                    that got lost. It&#39;s like a place where the computer keeps things it wants to return to their
+                    rightful spots.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/media</span><span class="c0">&nbsp;(Media): This branch is
+                    where the computer puts removable devices like USB drives or CDs.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/mnt</span><span class="c0">&nbsp;(Mount): This branch is
+                    where you temporarily attach or &quot;mount&quot; other storage devices, like external hard drives or
+                    network drives. It&#39;s like adding extra branches to our tree to hold more things.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/opt</span><span class="c0">&nbsp;(Optional): This branch
+                    is for special software or programs that you choose to add to the computer. It&#39;s like a branch where
+                    you can place extra tools or toys that you want to use.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/proc</span><span class="c0">&nbsp;(Process): This branch
+                    provides information about what the computer is doing right now. It&#39;s like a branch where you can
+                    see and understand how the tree (computer) is working.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/root</span><span class="c0">&nbsp;(Root): This branch is
+                    like the main branch of the tree. It&#39;s the home of the most powerful user called &quot;root&quot;
+                    who can do anything on the computer. It&#39;s like the trunk of the tree that holds everything
+                    together.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/run</span><span class="c0">&nbsp;(Run): This branch holds
+                    temporary files and information that the computer needs during its current session. It&#39;s like a
+                    branch where the computer keeps things it needs for its ongoing tasks.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/sbin</span><span class="c0">&nbsp;(System Binaries): This
+                    branch holds important programs that only the system administrators use to manage and control the
+                    computer. It&#39;s like a branch where special tools for tree caretakers are kept.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/srv</span><span class="c0">&nbsp;(Service): This branch is
+                    used to store data and files for services or programs that the computer provides to others. It&#39;s
+                    like a branch where the tree shares its fruits with other creatures.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/sys</span><span class="c0">&nbsp;(System): This branch
+                    provides information and settings about the computer&#39;s hardware and devices. It&#39;s like a branch
+                    that tells us about the tree&#39;s internal structure and helps it function properly.</span></li>
+            <li class="c22 c10 c35 li-bullet-0"><span class="c8">/tmp</span><span class="c0">&nbsp;(Temporary): This branch
+                    is like a temporary playground where programs can leave their files for a short time. It&#39;s like a
+                    branch where things are put for immediate use and not meant to stay for long.</span></li>
+        </ol>
+        <p class="c22 c35"><span class="c0">Imagine the leaves on the branches of our tree as files and smaller folders that
+                store different types of information. They can be documents, pictures, music, or even more folders.</span>
+        </p>
+        <p class="c14 c35"><span class="c0">Each part of the Linux filesystem has its own special purpose, just like each
+                branch of a tree. They all work together to make the computer function properly and help us do things like
+                writing, and surfing the internet.</span></p>
+    </div>
+    </article>
+    <script src="script.js"></script>
+    <script src="../script.js"></script>
+</body>
+<foot style="position: relative;">
+    <br><br><br><br><br>
+    <div style="position: absolute;top: 150px;left: 50vw;display: flex;flex-direction: row;width: 50vw;">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=393c3c07-d82e-48a5-bfd9-e86199c2aaa9" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=393c3c07-d82e-48a5-bfd9-e86199c2aaa9"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+        <p style="padding-left: 5px;"> © 2023 Aimed Guendouz</p>
+    </div>
+</foot>
+</html>
