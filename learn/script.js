@@ -15,7 +15,7 @@ function previous(previous_tuto) {
     previous_tuto = str.substring(str.lastIndexOf('/')+1, str.lastIndexOf('.'));
     var tuto = list[list.indexOf(previous_tuto) - 1];
     if (tuto) {
-        window.location.href = "file:///home/kali/linuxninja/website/learn/" + tuto + ".html";
+        window.location.href = tuto + ".html";
     }
 }
 
@@ -24,7 +24,7 @@ function next(previous_tuto) {
     previous_tuto = str.substring(str.lastIndexOf('/')+1, str.lastIndexOf('.'));
     var tuto = list[list.indexOf(previous_tuto) + 1];
     if (tuto) {
-        window.location.href = "file:///home/kali/linuxninja/website/learn/" + tuto + ".html";
+        window.location.href = tuto + ".html";
     }
 }
 
