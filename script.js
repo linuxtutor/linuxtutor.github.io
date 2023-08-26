@@ -10,6 +10,6 @@ function menu() {
 }
 
 function startLearning() {
-    window.location.href = "learn";
+    window.location.href = "learn/index.html";
 }
 
