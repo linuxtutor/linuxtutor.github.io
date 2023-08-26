@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta http-equiv='content-language' content='en-gb'>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6651390937843009"
+     crossorigin="anonymous"></script>
+     
+    <link rel="icon" type="icon" href="/favicon.ico">
+  <title>Linuxtutor | Learn - bash scripting</title>
+  <meta name="description" content="Linuxtutor is the easy way to learn Linux, with step-by-step tutorials and clear explanations.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2LH0J10GHP"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2LH0J10GHP');
+    </script>
+    <meta name="description" content="How to learn linux? Learn linux commands? Here you can unleash the power of linux and master the art of command-line with step-by-step tutorial and without any previuos knowledge assumed.">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <nav id="nav">
+        <div style="display: flex;flex-direction: row;align-items: center;">
+            <img id="logo" onclick="window.location.href='https://linuxtutor.github.io'" src="../asset/logo.png">
+
+        </div>
+        <div id="btn">
+            <button onclick="previous()"><span class="material-symbols-outlined">
+                chevron_left
+                </span><span class="btn">previous</span></button>   
+            <button onclick="next()"><span class="btn">next</span><span class="material-symbols-outlined">
+                chevron_right
+                </span></button>
+        </div>
+        <a class="lesson" href="/learn">
+            <p>Learn</p>
+        </a>
+        <a class="lesson" href="/quiz">
+            <p>Quiz</p>
+        </a>
+        <a class="lesson" href="/contact">
+            <p>Contact us</p>
+        </a>
+        <span onclick="menu()" class="material-symbols-outlined menu">menu</span>
+    </nav>
+    <div id="hr"></div>
+    <!--menu-->
+    <div id="menu">
+        <a class="lesson" href="/learn">
+            <p>Learn</p>
+        </a>
+        <a class="lesson" href="/quiz">
+            <p>Quiz</p>
+        </a>
+        <a class="lesson" href="/contact">
+            <p>Contact us</p>
+        </a>
+    </div>
+    <article id="content_table">
+        <a href="index.html"><b>introduction</b></a>
+        <a href="introduction_to_linux.html"><b>introduction to linux</b></a>
+        <ul>  
+            <li><a href="introduction_to_linux.html#what_is_linux">what is Linux ?</a></li>
+            <li><a href="introduction_to_linux.html#advantages_of_using_linux">Advantages of using Linux</a></li>
+            <li><a href="introduction_to_linux.html#disadvantages_of_using_linux">Disadvantages of using Linux</a></li>
+            <li><a href="introduction_to_linux.html#is_linux_for_me">Is linux for me?</a></li>
+            <li><a href="introduction_to_linux.html#who_uses_linux_and_where">Who uses Linux and where</a></li>        </ul>
+        <a href="linux_installation.html"><b>linux installation</b></a>
+        <ul>
+            <li><a href="linux_installation.html#what_is_virtualbox">what is virtualbox</a></li>
+            <li><a href="linux_installation.html#install_virtualbox_in_windows">install virtualbox in Windows</a></li>
+            <li><a href="linux_installation.html#install_virtualbox_in_macos">install virtualbox in MacOS</a></li>
+            <li><a href="linux_installation.html#install_ubuntu_in_virtualbox">install ubuntu in virtualbox</a></li>
+            <li><a href="linux_installation.html#install_ubuntu_on_a_computer">install ubuntu on a computer</a></li>
+        </ul>
+        <a href="linux_filesystem_structure.html"><b>linux filesystem structure</b></a>
+        <a href="user_and_group_management.html"><b>user and group management</b></a>
+        <a href="file_permissions.html"><b>file permission</b></a>
+        <a href="command_line_interface.html"><b>command line interface</b></a>
+        <ul>
+            <li><a href="command_line_interface.html#what_is_a_shell">what is a shell</a>
+            <li><a href="command_line_interface.html#what_is_the_terminal">what is the terminal</a>
+            <li><a href="command_line_interface.html#which_shell_is_the_default_in_my_linux_distro">Which shell is the default in my linux distro ?</span> </a>
+            <li><a href="command_line_interface.html#which_shell_should_I_use">Which shell should I use ?</a>
+            <li><a href="command_line_interface.html#use_terminal_to_do_tasks">Use terminal to do tasks</a> 
+            <ul>
+                <li><a href="command_line_interface.html#text_manipulations">TEXT MANIPULATIONS</a>
+                <li><a href="command_line_interface.html#files_and_directories_manipulations">FILES AND DIRECTORIES MANIPULATIONS</a>
+                <li><a href="command_line_interface.html#system">SYSTEM</a>
+                <li><a href="command_line_interface.html#hardware_and_system">HARDWARE AND SYSTEM</a>
+                <li><a href="command_line_interface.html#piping">Piping</a>
+                <li><a href="command_line_interface.html#output_redirection">Output redirection</a>
+                <li><a href="command_line_interface.html#running_multiple_commands_in_one_line">Running multiple commands in one line</a>
+                <li><a href="command_line_interface.html#terminal_shortcut">Terminal shortcut</a>
+
+            </ul>
+        </ul>
+        <a href="package_manager.html"><b>package manager</b></a>
+        <a href="bash_scripting.html"><b>bash scripting</b></a>
+        <a href="conclusion.html"><b>conclusion</b></a>
+    </article>
+    <span class="material-symbols-outlined list" onclick="content_table()">
+        list
+    </span>
+    <article id="content">
+        <div id="bash_scripting" class="tuto"><br><br><br>
+            <div class="title">
+                <h1><p class="c78 c35"><span class="c8 c38">bash scripting</span></p></h1>
+                <p class="c86 c35 c30"><span class="c8 c93">&ldquo;the only way to really learn scripting is to write scripts&rdquo;</span></p>
+            </div>
+            <p class="c1"><span class="c0">Bash scripting is the process of creating bash scripts which are normal text files
+                    executed by bash, these files contain bash commands.</span></p>
+            <p class="c1"><span class="c0">Bash scripting is a fast and easy way to automate tasks, which saves time and
+                    effort.</span></p>
+            <p class="c57"><span class="c0">Although bash scripting is considered a programming language, this chapter does not
+                    encompass every aspect of it. However, it does focus on the fundamental elements necessary for constructing
+                    effective scripts.</span></p>
+            <p class="c1"><span>To create a bash script, you only need to create a file and open it with a text editor then
+                    writing bash commands there which will be executed one by one. For example, I will create a file called
+                    &ldquo;script.sh&rdquo;, a </span><span>bash</span><span class="c0">&nbsp;script file usually has the
+                    extension &ldquo;.sh&rdquo; but you can ignore it or use another one.</span></p>
+            <ol class="c5 lst-kix_3nei86dldgwg-0 start" start="1">
+                <li class="c1 c10 li-bullet-0"><span class="c0">To create an empty file, open a terminal and run:</span></li>
+            </ol><a id="t.283e89ade1f29766991fa1f9b88248ae66c22887"></a><a id="t.70"></a>
+            <table class="c72">
+                <tr class="c36">
+                    <td class="c24" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c9">touch script.sh</span></p>
+                    </td>
+                </tr>
+            </table>
+            <ol class="c5 lst-kix_3nei86dldgwg-0" start="2">
+                <li class="c1 c10 li-bullet-0"><span>Then open it with a text editor like nano or mousepad (prefer
+                    </span><span>mousepad</span><span>&nbsp;since it has </span><span>gui</span><span class="c0">):</span></li>
+            </ol><a id="t.a677ede9814729a0fd81ec42a9ae162d8d13d379"></a><a id="t.71"></a>
+            <table class="c85">
+                <tr class="c91">
+                    <td class="c62" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c9">mousepad script.sh</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p class="c1 c7"><span class="c0"></span></p>
+            <p class="c1 c30"><span>a window like this will open:</span><br><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 254.67px;"><img
+                        alt="" src="../asset/images/image65.png"
+                        style="width: 601.70px; height: 254.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <ol class="c5 lst-kix_3nei86dldgwg-0" start="3">
+                <li class="c1 c10 li-bullet-0"><span>now write some bash commands separated by a line or a semicolon
+                        &ldquo;;&rdquo;, for example</span><br><span
+                        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 258.67px;"><img
+                            alt="" src="../asset/images/image57.png"
+                            style="width: 601.70px; height: 258.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                            title=""></span><br><span>this script will run the commands: </span><span class="c33">echo</span><span
+                        class="c9">&nbsp;</span><span class="c40">&quot;linux&quot;</span><span>&nbsp;and </span><span
+                        class="c9">ls</span></li>
+                <li class="c1 c10 li-bullet-0"><span class="c0">To run the script use the command bash like this:</span></li>
+            </ol><a id="t.d6cba3e648ec0a190d31df8ea4eccbf67041918b"></a><a id="t.72"></a>
+            <table class="c72">
+                <tr class="c36">
+                    <td class="c50" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c9">bash script.</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p class="c1 c30"><br><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 62.67px;"><img
+                        alt="" src="../asset/images/image64.png"
+                        style="width: 601.70px; height: 62.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span><br><span>The command </span><span class="c33">echo</span><span
+                    class="c9">&nbsp;</span><span class="c40">&quot;linux&quot;</span><span>&nbsp;print linux and the command
+                </span><span class="c9">ls -a</span><span class="c0">&nbsp;list all files which are the script file and the
+                    &ldquo;.&rdquo; directory which is the current directory and the &ldquo;..&rdquo; directory which is the
+                    mother directory of the current directory.</span></p>
+            <p class="c1 c7 c30"><span class="c0"></span></p>
+            <p class="c1"><span class="c21 c8">Functions</span></p>
+            <p class="c1"><span class="c0">A function is a block of code (one or more lines of code) that can be used multiple
+                    times by only calling the function by its name, this makes the code shorter and easier to understand.</span>
+            </p>
+            <p class="c1"><span class="c0">Here is an example of a function in bash</span></p><a
+                id="t.5905172a44a75bd13d926ffa3baa2342bf9c478d"></a><a id="t.73"></a>
+            <table class="c2">
+                <tr class="c36">
+                    <td class="c12" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c43 c42">#creating a function named greet</span><span
+                                class="c9"><br></span><span class="c33">greet</span><span class="c9">() {<br> &nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c33">echo</span><span
+                                class="c9">&nbsp;hello<br>} &nbsp; &nbsp;<br></span><span class="c42 c43">#calling the
+                                function</span><span class="c9"><br>greet</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p class="c1"><span class="c0">In bash, you can write a comment by using the # sign before the comment. A comment is
+                    text created by the programmer to explain something for those who read the code, and it&rsquo;s not readed
+                    by the programming language like bash.</span></p>
+            <p class="c1"><span>In the previous code we have created a function named &ldquo;greet&rdquo; by using the
+                    syntax</span><span class="c9">&nbsp;greet()</span><span class="c0">&nbsp;the brackets &ldquo;{&ldquo; and
+                    &ldquo;}&rdquo; determine the code block of the function, in this case it&rsquo;s one command &ldquo;echo
+                    hello&rdquo;.</span></p>
+            <p class="c1"><span>To execute the code block of a function we call the function by only typing its name like in the
+                    previous code </span><span class="c9">greet</span></p>
+            <p class="c1 c7"><span class="c21 c8"></span></p>
+            <p class="c1"><span class="c53 c8">Variables and constant</span><span class="c20 c8">&nbsp;</span></p>
+            <p class="c1"><span class="c0">Imagine variables as boxes, each box has something inside which is called variable
+                    value, and each box has a name which is called variable name. Variables are like containers used to store
+                    multiple types of data, and to use the data you need to use the variable name.</span></p>
+            <p class="c1"><span class="c0">The difference between variables and constants is that you can change the value of a
+                    variable during the script execution but not of a constant.</span></p>
+            <p class="c1"><span class="c0">Let&rsquo;s get a look on how to use variables:</span></p>
+            <p class="c1"><span class="c0">for example you have this script</span></p><a
+                id="t.91bbb72b7d8a487f73c9a555e43aa83aaf9dd385"></a><a id="t.74"></a>
+            <table class="c2">
+                <tr class="c36">
+                    <td class="c12" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c9">var=</span><span class="c40">&quot;hi&quot;</span><span
+                                class="c9">&nbsp;</span><span class="c43 c42">#creating a variable named &#39;var&#39; with the
+                                value &#39;hi&#39;</span><span class="c9"><br></span><span class="c33">greet</span><span
+                                class="c9">() { </span><span class="c43 c42">#creating a function that print the &#39;var&#39;
+                                variable value</span><span class="c9"><br></span><span class="c33">echo</span><span
+                                class="c9">&nbsp;</span><span class="c40">&quot;</span><span class="c42 c59">$var</span><span
+                                class="c40">&quot;</span><span class="c9"><br>}<br>greet </span><span class="c43 c42">#calling
+                                the function</span><span class="c9"><br>var=</span><span
+                                class="c40">&quot;hello&quot;</span><span class="c9">&nbsp;</span><span class="c43 c42">#change
+                                the value of the &#39;var&#39; variable</span><span class="c9"><br>greet </span><span
+                                class="c43 c42">#calling the function again</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p class="c1"><span class="c0">In this script we have created a variable named &lsquo;var&rsquo; and assigned the
+                    value &lsquo;hi&rsquo; to it, then we created a function that print the variable value and we call it, so it
+                    print &lsquo;hi&rsquo;, after that, we changed the variable value to &lsquo;hello&rsquo; and called the
+                    function again and it printed hello.</span></p>
+            <p class="c1"><span class="c0">result:</span></p>
+            <p class="c1"><br><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 595.00px; height: 81.00px;"><img
+                        alt="" src="../asset/images/image32.png"
+                        style="width: 595.00px; height: 81.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c1"><span class="c0">Sometimes, you need to store the output of a command to a variable, you can do it
+                    like this:</span></p>
+            <p class="c1"><span class="c0">variable=$(command)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+            <p class="c1"><span class="c0">example :</span></p>
+            <p class="c60"><span class="c0"># Execute a command and store the output in a variable</span></p>
+            <p class="c1"><span class="c0">output=$(ls -a -l)</span></p>
+            <p class="c1"><span class="c0"># Print the stored output</span></p>
+            <p class="c1"><span class="c0">echo -e &quot;The output of the command is:\n $output&quot;</span></p>
+            <p class="c1"><span>result :</span><br><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 100.00px;"><img
+                        alt="" src="../asset/images/image27.png"
+                        style="width: 601.70px; height: 100.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c1 c7"><span class="c0"></span></p>
+            <p class="c1"><span class="c21 c8">Conditional statements</span></p>
+            <p class="c1"><span>In Bash, you can use conditional statements to make decisions and execute different blocks of
+                    code based on certain conditions. The two main types of conditional statements in Bash are the </span><span
+                    class="c81 c8">if-else</span><span>&nbsp;statement and the </span><span class="c81 c8">case</span><span
+                    class="c0">&nbsp;statement.</span></p>
+            <p class="c1"><span class="c28 c8">If-else statement</span></p>
+            <p class="c1"><span class="c0">To create an if-else statement you can use this syntax:</span></p>
+            <p class="c1 c7"><span class="c0"></span></p><a id="t.845563257774ee2ce48c0682eebe54b4e1336b3e"></a><a
+                id="t.75"></a>
+            <table class="c2">
+                <tr class="c36">
+                    <td class="c12" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c51 c42">if</span><span class="c9">&nbsp;[ condition1 ]; </span><span
+                                class="c51 c42">then</span><span
+                                class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                class="c43 c42">#code block to execute if condition1 is true else check condition2</span><span
+                                class="c9"><br></span><span class="c51 c42">elif</span><span class="c9">&nbsp;[ condition2 ];
+                            </span><span class="c51 c42">then</span><span
+                                class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                class="c43 c42">#code block to execute if </span><span class="c43 c42">condition2</span><span
+                                class="c43 c42">&nbsp;is true</span><span
+                                class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42">#you
+                                can add more &#39;elif&#39; if you want or you can use only if or only if and else, that depends
+                                on yours needs</span><span class="c9"><br></span><span class="c51 c42">else</span><span
+                                class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                class="c43 c42">#code block to execute if all conditions is false</span><span
+                                class="c9"><br></span><span class="c70 c51 c42">fi</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p class="c1"><span>example of if-else statement</span></p><a id="t.9a5943e73029e689085ee18885f7714563951955"></a><a
+                id="t.76"></a>
+            <table class="c2">
+                <tr class="c36">
+                    <td class="c12" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c43 c42"># Prompt the user to enter a number</span><span
+                                class="c9"><br></span><span class="c33">echo</span><span class="c9">&nbsp;-n </span><span
+                                class="c40">&quot;enter a number: &quot;</span><span class="c9"><br></span><span
+                                class="c33">read</span><span class="c9">&nbsp;number<br><br></span><span class="c43 c42"># say
+                                if the number is positive or negative</span><span class="c9"><br></span><span
+                                class="c51 c42">if</span><span class="c9">&nbsp;[ </span><span
+                                class="c59 c42">$number</span><span class="c9">&nbsp;-gt 0 ]; </span><span
+                                class="c51 c42">then</span><span class="c9"><br> &nbsp; &nbsp;</span><span
+                                class="c33">echo</span><span class="c9">&nbsp;the number is positive<br></span><span
+                                class="c51 c42">else</span><span class="c9"><br> &nbsp; &nbsp;</span><span
+                                class="c33">echo</span><span class="c9">&nbsp;the number is negative<br></span><span
+                                class="c51 c42">fi</span></p>
+                    </td>
+                </tr>
+            </table>
+            <ul class="c5 lst-kix_p3e3dwvzjh6w-0 start">
+                <li class="c22 c10 li-bullet-0"><span class="c26">if</span><span>&nbsp;is used to conditionally execute a block
+                        of code based on a specified condition. If the condition is true, the code within the </span><span
+                        class="c26">if</span><span class="c0">&nbsp;block is executed.</span></li>
+                <li class="c22 c10 li-bullet-0"><span class="c26">elif</span><span>&nbsp;(short for &quot;else if&quot;) is used
+                        to check an additional condition if the previous </span><span class="c26">if </span><span>or</span><span
+                        class="c26">&nbsp;elif</span><span>&nbsp;statement&#39;s condition is false. If the </span><span
+                        class="c26">elif</span><span>&nbsp;condition is true, the code within the </span><span
+                        class="c26">elif</span><span class="c0">&nbsp;block is executed.</span></li>
+                <li class="c22 c10 li-bullet-0"><span class="c26">else</span><span>&nbsp;is used as a fallback option if all
+                        preceding conditions (i.e., the </span><span class="c26">if</span><span>&nbsp;and </span><span
+                        class="c26">elif</span><span>&nbsp;conditions) are false. The code within the </span><span
+                        class="c26">else</span><span class="c0">&nbsp;block is executed in this case.</span></li>
+            </ul>
+            <p class="c1"><span>the condition </span><span class="c59 c42">$number</span><span class="c9">&nbsp;-gt
+                    0</span><span>&nbsp;returns true if the variable value of the variable $number is greater than 0 by using
+                    the </span><span class="c9">-gt</span><span class="c0">&nbsp;conditional operators. Others conditional
+                    operators are:</span></p>
+            <p class="c1 c7"><span class="c0"></span></p><a id="t.6a4b24064d2b1679b13bc838bc976e6ad9640a82"></a><a
+                id="t.77"></a>
+            <table class="c2">
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c8">Operator</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c8">Description</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">-eq</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Returns true if two numbers are equivalent</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">-lt</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Returns true if a number is less than another number</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">-gt</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Returns true if a number is greater than another number</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">==</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Returns true if two strings are equivalent</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">!=</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Returns true if two strings are not equivalent</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c56"><span class="c0">!</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Returns true if the expression is false</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c56"><span class="c0">-d</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Check the existence of a directory</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c56"><span class="c0">-e</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Check the existence of a file</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c56"><span class="c0">-r</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Check the existence of a file and read permission</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c56"><span class="c0">-w</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Check the existence of a file and write permission</span></p>
+                    </td>
+                </tr>
+                <tr class="c36">
+                    <td class="c41" colspan="1" rowspan="1">
+                        <p class="c56"><span class="c0">-x</span></p>
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c0">Check the existence of a file and execute permission</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p class="c1 c7"><span class="c0"></span></p>
+            <p class="c1"><span class="c28 c8">Case statement</span></p>
+            <p class="c77"><span>Case statements in Bash are used as a form of conditional branching when you have multiple
+                    possible conditions to check against a single variable or expression. They provide an alternative to using
+                    multiple </span><span class="c26">if</span><span class="c0">&nbsp;statements with multiple
+                    conditions.</span></p>
+            <p class="c1"><span class="c0">Here&#39;s a simple example to demonstrate the usage of case statements in
+                    Bash:</span></p><a id="t.9ca64ef0a09c364d7cc98dfd76c82f98b69a91e6"></a><a id="t.78"></a>
+            <table class="c2">
+                <tr class="c36">
+                    <td class="c12" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c51 c42">case</span><span class="c9">&nbsp;</span><span
+                                class="c40">&quot;</span><span class="c59 c42">$variable</span><span
+                                class="c40">&quot;</span><span class="c9">&nbsp;</span><span class="c42 c51">in</span><span
+                                class="c9"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern1)<br> &nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code to
+                                execute if variable matches pattern1</span><span class="c9"><br> &nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern2)<br>
+                                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code
+                                to execute if variable matches pattern2</span><span class="c9"><br> &nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pattern3|pattern4)<br>
+                                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code
+                                to execute if variable matches pattern3 or pattern4</span><span class="c9"><br> &nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)<br>
+                                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c43 c42"># Code
+                                to execute if variable doesn&#39;t match any patterns</span><span class="c9"><br> &nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;<br></span><span
+                                class="c51 c42">esac</span></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </article>
+    <script src="script.js"></script>
+    <script src="../script.js"></script>
+</body>
+<foot style="position: relative;">
+    <br><br><br><br><br>
+    <div style="position: absolute;top: 150px;left: 50vw;display: flex;flex-direction: row;width: 50vw;">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=393c3c07-d82e-48a5-bfd9-e86199c2aaa9" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=393c3c07-d82e-48a5-bfd9-e86199c2aaa9"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+        <p style="padding-left: 5px;"> © 2023 Aimed Guendouz</p>
+    </div>
+</foot>
+</html>

@@ -6,7 +6,7 @@
      crossorigin="anonymous"></script>
      
     <link rel="icon" type="icon" href="/favicon.ico">
-  <title>Linuxtutor | Learn - introduction</title>
+  <title>Linuxtutor | Learn - file permissions</title>
   <meta name="description" content="Linuxtutor is the easy way to learn Linux, with step-by-step tutorials and clear explanations.">
 
     <!-- Google tag (gtag.js) -->
@@ -112,31 +112,73 @@
         list
     </span>
     <article id="content">
-
-    <div id="introduction" class="tuto "><br><br><br>
-        <div class="title">
-            <h1><p class="c78 c35"><span class="c8 c38">INTRODUCTION</span></p></h1>
+        <div id="file_permissions" class="tuto"><br><br><br>
+            <div class="title">
+                <h1><p class="c78 c35"><span class="c8 c38">File permissions</span></p></h1>
+            </div>
+            <p class="c11"><span class="c0">File permission defines who can read and/or write to the file, and is the file
+                    executable or not.</span></p>
+            <p class="c11"><span class="c0">To see a file permissions you can open the terminal and run the command (replace
+                    filename with the name of your file or directory)</span></p><a
+                id="t.1cef3a3dcc24bb6f648a0b0fcbc8eedfa403c534"></a><a id="t.1"></a>
+            <table class="c2">
+                <tr class="c36">
+                    <td class="c12" colspan="1" rowspan="1">
+                        <p class="c1"><span class="c9">ls -ld filename</span></p>
+                    </td>
+                </tr>
+            </table>
+            <p class="c11"><span class="c0">result:</span></p>
+            <p class="c11"><span
+                    style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 601.70px; height: 74.67px;"><img
+                        alt="" src="../asset/images/image60.png"
+                        style="width: 601.70px; height: 74.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+            <p class="c11"><span class="c0">The string &ldquo;drwxr-xr-x&rdquo; is the file permission, let&rsquo;s see what
+                    each letter represent</span></p>
+            <ul class="c5 lst-kix_qw73sclbjoak-0 start">
+                <li class="c22 c10 c35 li-bullet-0"><span>The first character (</span><span class="c31 c8">d</span><span>)
+                        indicates that it is a directory. If it were a regular file, it would be represented by (</span><span
+                        class="c31 c8">-</span><span class="c42 c81">)</span><span class="c0">.</span></li>
+            </ul>
+            <p class="c14 c35"><span class="c0">The next three characters represent the permissions for the owner of the
+                    directory:</span></p>
+            <ul class="c5 lst-kix_4dluzw3ktk30-0 start">
+                <li class="c4 c35 li-bullet-0"><span class="c31 c8">rwx</span><span>&nbsp;means the owner has read (</span><span
+                        class="c31 c8">r</span><span>), write (</span><span class="c31 c8">w</span><span>), and execute
+                        (</span><span class="c31 c8">x</span><span class="c0">) permissions on the directory. The owner can
+                        view, modify, and navigate into the directory.</span></li>
+            </ul>
+            <p class="c14 c35"><span class="c0">The next three characters represent the permissions for the group that the
+                    directory belongs to:</span></p>
+            <ul class="c5 lst-kix_qk971412kqrs-0 start">
+                <li class="c4 c35 li-bullet-0"><span class="c31 c8">r-x</span><span>&nbsp;means the group has read (</span><span
+                        class="c31 c8">r</span><span>) and execute (</span><span class="c31 c8">x</span><span>) permissions, but
+                        does not have write (</span><span class="c31 c8">w</span><span class="c0">) permission. The group
+                        members can list the contents of the directory and navigate into it, but cannot modify or create new
+                        files or directories within it.</span></li>
+            </ul>
+            <p class="c14 c35"><span class="c0">The last three characters represent the permissions for other users (neither the
+                    owner nor part of the group):</span></p>
+            <ul class="c5 lst-kix_783grzu5w78d-0 start">
+                <li class="c4 c35 li-bullet-0"><span class="c31 c8">r-x</span><span>&nbsp;means other users have read
+                        (</span><span class="c31 c8">r</span><span>) and execute (</span><span class="c31 c8">x</span><span>)
+                        permissions, but do not have write (</span><span class="c8 c31">w</span><span class="c0">) permission.
+                        Other users can view the directory&#39;s contents and navigate into it, but cannot make changes to
+                        it.</span></li>
+            </ul>
+            <p class="c14 c35"><span class="c0">So to read a file permission:</span></p>
+            <ol class="c5 lst-kix_foqtvi2ry6re-0 start" start="1">
+                <li class="c4 c35 li-bullet-0"><span class="c0">the first letter indicate the filetype</span></li>
+                <li class="c4 c35 li-bullet-0"><span class="c0">the next three letter indicate the owner permissions</span></li>
+                <li class="c4 c35 li-bullet-0"><span class="c0">the next three letter indicate the group permissions</span></li>
+                <li class="c4 c35 li-bullet-0"><span class="c0">the next three letter indicate others permissions</span></li>
+                <li class="c4 c35 li-bullet-0"><span>permissions letter are: </span><span class="c8 c58">r</span><span>&nbsp;for
+                        read, </span><span class="c58 c8">w</span><span>&nbsp;for write, </span><span
+                        class="c58 c8">x</span><span class="c0">&nbsp;for execute</span></li>
+            </ol>
         </div>
-        <p class="c35 c79"><span class="c0">I want to tell you a story&mdash;a different one. Not about Linus Torvalds and
-                the creation of the Linux kernel or Richard Stallman&#39;s GNU Project. Those stories are well-documented in
-                numerous Linux books. Instead, I want to share the story of how you reclaim control over your
-                computer.</span></p>
-        <p class="c35 c37"><span class="c0">Linux is truly an extraordinary exception to the common saying, &quot;you get
-                what you pay for.&quot; Despite being freely available, Linux surpasses expectations in terms of
-                performance, features, and reliability. Its cost-free nature does not diminish its capabilities in any way.
-                Linux proves that exceptional quality and value can coexist without the need for a hefty price tag. Whether
-                it&#39;s the impressive performance, extensive features, or unwavering reliability, Linux stands as a
-                testament to the power of open-source software.</span></p>
-        <p class="c37 c35"><span>Starting a new skill can be overwhelming due to the vast amount of information available.
-                It&#39;s frustrating when you encounter unexplained concepts and feel more confused than enlightened.
-                However, &quot;Linuxtutor&quot; is here to help. No prior knowledge is assumed, and
-                you&#39;ll be guided step by step with a logical approach. New concepts and jargon will be explained in
-                plain language. Let&#39;s begin this journey together!</span></p>
-        <p class="c29 c7"><span class="c25 c8"></span></p>
-    </div>
-    
     </article>
-    
     <script src="script.js"></script>
     <script src="../script.js"></script>
 </body>
