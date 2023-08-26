@@ -12,19 +12,25 @@ var list =
 
 function previous(previous_tuto) {
     var str = window.location.href;
+    if (str == "https://linuxtutor.github.io/learn/") {
+        str = "index";
+    }
     previous_tuto = str.substring(str.lastIndexOf('/')+1, str.lastIndexOf('.'));
     var tuto = list[list.indexOf(previous_tuto) - 1];
     if (tuto) {
-        window.location.href = tuto + ".html";
+        window.location.href = "linuxtutor.github.io/" + tuto + ".html";
     }
 }
 
 function next(previous_tuto) {
     var str = window.location.href;
+    if (str == "https://linuxtutor.github.io/learn/") {
+        str = "index";
+    }
     previous_tuto = str.substring(str.lastIndexOf('/')+1, str.lastIndexOf('.'));
     var tuto = list[list.indexOf(previous_tuto) + 1];
     if (tuto) {
-        window.location.href = tuto + ".html";
+        window.location.href = "linuxtutor.github.io/" + tuto + ".html";
     }
 }
 
