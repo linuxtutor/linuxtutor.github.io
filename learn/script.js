@@ -1,6 +1,5 @@
 var list = 
-    ["index", 
-    "introduction_to_linux",
+    ["index",
     "linux_installation",
     "linux_filesystem_structure", 
     "user_and_group_management", 
