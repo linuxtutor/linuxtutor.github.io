@@ -10,4 +10,5 @@ https://linuxtutor.github.io/learn/file_permissions.html
 https://linuxtutor.github.io/learn/command_line_interface.html
 https://linuxtutor.github.io/learn/package_manager.html
 https://linuxtutor.github.io/learn/bash_scripting.html
+https://linuxtutor.github.io/robots.txt
 https://linuxtutor.github.io/ads.txt
