@@ -1,0 +1,13 @@
+https://linuxtutor.github.io/
+https://linuxtutor.github.io/quiz/
+https://linuxtutor.github.io/contact/
+https://linuxtutor.github.io/learn/
+https://linuxtutor.github.io/learn/index.html
+https://linuxtutor.github.io/learn/linux_installation.html
+https://linuxtutor.github.io/learn/linux_filesystem_structure.html
+https://linuxtutor.github.io/learn/user_and_group_management.html
+https://linuxtutor.github.io/learn/file_permissions.html
+https://linuxtutor.github.io/learn/command_line_interface.html
+https://linuxtutor.github.io/learn/package_manager.html
+https://linuxtutor.github.io/learn/bash_scripting.html
+https://linuxtutor.github.io/ads.txt
